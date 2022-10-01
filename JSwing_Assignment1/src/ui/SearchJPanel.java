@@ -4,6 +4,8 @@
  */
 package ui;
 
+import model.Employee;
+
 /**
  *
  * @author nisha
@@ -13,8 +15,12 @@ public class SearchJPanel extends javax.swing.JPanel {
     /**
      * Creates new form SearchJPanel
      */
-    public SearchJPanel() {
+    
+    Employee emp;
+    
+    public SearchJPanel(Employee emp) {
         initComponents();
+        this.emp = emp;
     }
 
     /**
@@ -140,6 +146,9 @@ public class SearchJPanel extends javax.swing.JPanel {
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(134, Short.MAX_VALUE))
         );
+
+        detailsJPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jTextField1, jTextField10, jTextField2, jTextField3, jTextField4, jTextField5, jTextField6, jTextField7, jTextField8, jTextField9});
+
         detailsJPanelLayout.setVerticalGroup(
             detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(detailsJPanelLayout.createSequentialGroup()
