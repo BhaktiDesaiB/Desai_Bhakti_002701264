@@ -51,7 +51,6 @@ public class CreateJPanel extends javax.swing.JPanel {
         tfName = new javax.swing.JTextField();
         tfID = new javax.swing.JTextField();
         tfAge = new javax.swing.JTextField();
-        tfGender = new javax.swing.JTextField();
         tfJoiningDate = new javax.swing.JTextField();
         tfLevel = new javax.swing.JTextField();
         tfTeam = new javax.swing.JTextField();
@@ -59,6 +58,9 @@ public class CreateJPanel extends javax.swing.JPanel {
         tfPhoneNo = new javax.swing.JTextField();
         tfEmail = new javax.swing.JTextField();
         create = new javax.swing.JButton();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
 
         createTitle.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         createTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -122,6 +124,12 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         });
 
+        jRadioButton1.setText("Male");
+
+        jRadioButton2.setText("Female");
+
+        jRadioButton3.setText("Other");
+
         javax.swing.GroupLayout detailsJPanelLayout = new javax.swing.GroupLayout(detailsJPanel);
         detailsJPanel.setLayout(detailsJPanelLayout);
         detailsJPanelLayout.setHorizontalGroup(
@@ -159,10 +167,6 @@ public class CreateJPanel extends javax.swing.JPanel {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(tfJoiningDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(detailsJPanelLayout.createSequentialGroup()
-                                    .addComponent(gender)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(tfGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(detailsJPanelLayout.createSequentialGroup()
                                     .addComponent(age)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(tfAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -173,11 +177,19 @@ public class CreateJPanel extends javax.swing.JPanel {
                                 .addGroup(detailsJPanelLayout.createSequentialGroup()
                                     .addComponent(employeeName)
                                     .addGap(56, 56, 56)
-                                    .addComponent(tfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(tfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(detailsJPanelLayout.createSequentialGroup()
+                                .addComponent(gender)
+                                .addGap(103, 103, 103)
+                                .addComponent(jRadioButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jRadioButton2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jRadioButton3))))
                     .addGroup(detailsJPanelLayout.createSequentialGroup()
                         .addGap(173, 173, 173)
                         .addComponent(create)))
-                .addContainerGap(154, Short.MAX_VALUE))
+                .addContainerGap(178, Short.MAX_VALUE))
         );
         detailsJPanelLayout.setVerticalGroup(
             detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,10 +207,12 @@ public class CreateJPanel extends javax.swing.JPanel {
                     .addComponent(age)
                     .addComponent(tfAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(gender)
-                    .addComponent(tfGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jRadioButton1)
+                    .addComponent(jRadioButton2)
+                    .addComponent(jRadioButton3))
+                .addGap(10, 10, 10)
                 .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(joiningDate)
                     .addComponent(tfJoiningDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -226,7 +240,7 @@ public class CreateJPanel extends javax.swing.JPanel {
                     .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addComponent(create)
                 .addContainerGap())
         );
@@ -236,9 +250,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(titleJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(detailsJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(detailsJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -250,17 +262,27 @@ public class CreateJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tfAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAgeActionPerformed
+    private void createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfAgeActionPerformed
+        
+        emp.setEmployeeName(tfName.getText());
+        emp.setEmployeeID(tfID.getText());
+        emp.setStartDate(tfJoiningDate.getText());
+        emp.setLevel(tfLevel.getText());
+        emp.setPosition(tfPosition.getText());
+        emp.setContactNo(tfPhoneNo.getText());
+        emp.setEmailID(tfEmail.getText());
+
+        
+    }//GEN-LAST:event_createActionPerformed
 
     private void tfPhoneNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPhoneNoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfPhoneNoActionPerformed
 
-    private void createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createActionPerformed
+    private void tfAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAgeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_createActionPerformed
+    }//GEN-LAST:event_tfAgeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -274,6 +296,9 @@ public class CreateJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel employeeName;
     private javax.swing.JLabel gender;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JLabel joiningDate;
     private javax.swing.JLabel level;
     private javax.swing.JLabel phoneNo;
@@ -281,7 +306,6 @@ public class CreateJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel teamInfo;
     private javax.swing.JTextField tfAge;
     private javax.swing.JTextField tfEmail;
-    private javax.swing.JTextField tfGender;
     private javax.swing.JTextField tfID;
     private javax.swing.JTextField tfJoiningDate;
     private javax.swing.JTextField tfLevel;
