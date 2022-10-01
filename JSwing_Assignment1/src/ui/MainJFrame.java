@@ -5,6 +5,7 @@
 package ui;
 
 import model.Employee;
+import model.History;
 
 /**
  *
@@ -17,11 +18,13 @@ public class MainJFrame extends javax.swing.JFrame {
      */
     
     Employee emp;
+    History history;
     
     public MainJFrame() {
         initComponents();
         
         emp = new Employee();
+        history = new History();
     }
 
     /**
@@ -98,7 +101,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(updateButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(deleteButton)
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addContainerGap(598, Short.MAX_VALUE))
         );
 
         controlPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {createButton, deleteButton, searchButton, updateButton});
@@ -109,11 +112,11 @@ public class MainJFrame extends javax.swing.JFrame {
         detailsPanel.setLayout(detailsPanelLayout);
         detailsPanelLayout.setHorizontalGroup(
             detailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 295, Short.MAX_VALUE)
+            .addGap(0, 695, Short.MAX_VALUE)
         );
         detailsPanelLayout.setVerticalGroup(
             detailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
 
         splitPane.setRightComponent(detailsPanel);
@@ -134,8 +137,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
         // TODO add your handling code here:
-        CreateJPanel createEmp = new CreateJPanel(emp);
-        splitPane.setRightComponent(createEmp);
+        CreateJPanel createPanel = new CreateJPanel(history);
+        splitPane.setRightComponent(createPanel);
     }//GEN-LAST:event_createButtonActionPerformed
 
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed

@@ -4,6 +4,7 @@
  */
 package model;
 
+
 /**
  *
  * @author nisha
@@ -14,7 +15,7 @@ public class Employee {
     private int age;
     private char gender;
     private String startDate;
-    private int level;
+    private String level;
     private String teamInfo;
     private String position;
     private String contactNo;
@@ -60,11 +61,11 @@ public class Employee {
         this.startDate = startDate;
     }
 
-    public int getLevel() {
+    public String getLevel() {
         return level;
     }
 
-    public void setLevel(int level) {
+    public void setLevel(String level) {
         this.level = level;
     }
 
