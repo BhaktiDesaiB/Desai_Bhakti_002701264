@@ -4,7 +4,7 @@
  */
 package ui;
 
-import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import model.Employee;
 import model.History;
 
@@ -12,18 +12,19 @@ import model.History;
  *
  * @author nisha
  */
-public class CreateJPanel extends javax.swing.JPanel {
+public class ViewJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form CreateJPanel
+     * Creates new form ViewJPanel
      */
     
     History history;
-    
-    public CreateJPanel(History history) {
+    public ViewJPanel(History history) {
         initComponents();
+        
         this.history = history;
         
+        employeeDetailsTable();
     }
 
     /**
@@ -35,9 +36,12 @@ public class CreateJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        genderButtonGroup = new javax.swing.ButtonGroup();
-        titleJPanel = new javax.swing.JPanel();
-        createTitle = new javax.swing.JLabel();
+        detailsTitle = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        empTable = new javax.swing.JTable();
+        viewButton = new javax.swing.JButton();
+        updateButton = new javax.swing.JButton();
+        deleteButton = new javax.swing.JButton();
         detailsJPanel = new javax.swing.JPanel();
         employeeName = new javax.swing.JLabel();
         employeeID = new javax.swing.JLabel();
@@ -60,28 +64,40 @@ public class CreateJPanel extends javax.swing.JPanel {
         tfPosition = new javax.swing.JTextField();
         tfPhoneNo = new javax.swing.JTextField();
         tfEmail = new javax.swing.JTextField();
-        create = new javax.swing.JButton();
-        reset = new javax.swing.JButton();
         tfGender = new javax.swing.JTextField();
 
-        createTitle.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        createTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        createTitle.setText("New Employee");
-        createTitle.setToolTipText("");
+        detailsTitle.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        detailsTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        detailsTitle.setText("View Employee Details");
 
-        javax.swing.GroupLayout titleJPanelLayout = new javax.swing.GroupLayout(titleJPanel);
-        titleJPanel.setLayout(titleJPanelLayout);
-        titleJPanelLayout.setHorizontalGroup(
-            titleJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(createTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        titleJPanelLayout.setVerticalGroup(
-            titleJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(titleJPanelLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(createTitle)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        empTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Employee Name", "Employee ID", "Age", "Gender", "Joining Date", "Level", "Team Information", "Position", "Contact No.", "Email ID"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(empTable);
+
+        viewButton.setText("View");
+        viewButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewButtonActionPerformed(evt);
+            }
+        });
+
+        updateButton.setText("Update");
+
+        deleteButton.setText("Delete");
 
         employeeName.setText("Employee Name :");
 
@@ -107,8 +123,6 @@ public class CreateJPanel extends javax.swing.JPanel {
 
         photo.setText("photo :");
 
-        tfName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
         tfAge.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfAgeActionPerformed(evt);
@@ -124,26 +138,6 @@ public class CreateJPanel extends javax.swing.JPanel {
         tfPhoneNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfPhoneNoActionPerformed(evt);
-            }
-        });
-
-        create.setText("Create");
-        create.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createActionPerformed(evt);
-            }
-        });
-
-        reset.setText("Reset");
-        reset.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                resetActionPerformed(evt);
-            }
-        });
-
-        tfGender.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfGenderActionPerformed(evt);
             }
         });
 
@@ -176,35 +170,25 @@ public class CreateJPanel extends javax.swing.JPanel {
                                     .addComponent(gender)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, detailsJPanelLayout.createSequentialGroup()
                                         .addGap(38, 38, 38)
-                                        .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(contactInfo, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(create, javax.swing.GroupLayout.Alignment.TRAILING))))
+                                        .addComponent(contactInfo)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                        .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(detailsJPanelLayout.createSequentialGroup()
-                                .addComponent(reset)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, detailsJPanelLayout.createSequentialGroup()
-                                .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(tfGender, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tfJoiningDate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tfAge, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tfID, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tfName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tfLevel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tfTeam, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tfPosition, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tfPhoneNo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tfEmail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(124, 124, 124))))))
+                        .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tfJoiningDate, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfAge, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfID, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfName, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfLevel, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfTeam, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfPosition, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfPhoneNo, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfEmail, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfGender, javax.swing.GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE))
+                        .addGap(124, 124, 124))))
         );
-
-        detailsJPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {tfAge, tfEmail, tfGender, tfID, tfJoiningDate, tfLevel, tfName, tfPhoneNo, tfPosition, tfTeam});
-
         detailsJPanelLayout.setVerticalGroup(
             detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(detailsJPanelLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addGap(20, 20, 20)
                 .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(employeeName)
                     .addComponent(tfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -217,7 +201,7 @@ public class CreateJPanel extends javax.swing.JPanel {
                     .addComponent(age)
                     .addComponent(tfAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(gender)
                     .addComponent(tfGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -248,123 +232,86 @@ public class CreateJPanel extends javax.swing.JPanel {
                     .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(photo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(create)
-                    .addComponent(reset))
-                .addGap(39, 39, 39))
+                .addContainerGap(180, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(titleJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addComponent(detailsTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(detailsJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(viewButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(updateButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(deleteButton)
+                        .addGap(16, 16, 16))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 61, Short.MAX_VALUE)
+                .addComponent(detailsJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {deleteButton, updateButton, viewButton});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(titleJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
+                .addComponent(detailsTitle)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(viewButton)
+                    .addComponent(updateButton)
+                    .addComponent(deleteButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(detailsJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(detailsJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
+    private void viewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewButtonActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "Information reset");
-
-        tfName.setText("");
-        tfID.setText("");
-        tfAge.setText("");
-        tfGender.setText("");
-        tfJoiningDate.setText("");
-        tfLevel.setText("");
-        tfPosition.setText("");
-        tfTeam.setText("");
-        tfPhoneNo.setText("");
-        tfEmail.setText("");
-    }//GEN-LAST:event_resetActionPerformed
-
-    private void createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createActionPerformed
-        // TODO add your handling code here:
-
-        String name = tfName.getText();
-        String empID = tfID.getText();
-        int age = Integer.parseInt(tfAge.getText());
-        String gender = tfGender.getText();
-        String joiningDate = tfJoiningDate.getText();
-        String level = tfLevel.getText();
-        String position = tfPosition.getText();
-        String teamInfo = tfTeam.getText();
-        String phoneNo = tfPhoneNo.getText();
-        String emailID = tfEmail.getText();
-
-        Employee emp = history.addNewEmployee();
-
-        emp.setEmployeeName(name);
-        emp.setEmployeeID(empID);
-        emp.setAge(age);
-        emp.setStartDate(joiningDate);
-        emp.setLevel(level);
-        emp.setPosition(position);
-        emp.setTeamInfo(teamInfo);
-        emp.setContactNo(phoneNo);
-        emp.setEmailID(emailID);
-
-        JOptionPane.showMessageDialog(this, "Employee Information Saved!");
-
-        tfName.setText("");
-        tfID.setText("");
-        tfAge.setText("");
-        tfGender.setText("");
-        tfJoiningDate.setText("");
-        tfLevel.setText("");
-        tfPosition.setText("");
-        tfTeam.setText("");
-        tfPhoneNo.setText("");
-        tfEmail.setText("");
-    }//GEN-LAST:event_createActionPerformed
-
-    private void tfPhoneNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPhoneNoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfPhoneNoActionPerformed
-
-    private void tfJoiningDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfJoiningDateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfJoiningDateActionPerformed
+    }//GEN-LAST:event_viewButtonActionPerformed
 
     private void tfAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAgeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfAgeActionPerformed
 
-    private void tfGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfGenderActionPerformed
+    private void tfJoiningDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfJoiningDateActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfGenderActionPerformed
+    }//GEN-LAST:event_tfJoiningDateActionPerformed
+
+    private void tfPhoneNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPhoneNoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfPhoneNoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel age;
     private javax.swing.JLabel contactInfo;
-    private javax.swing.JButton create;
-    private javax.swing.JLabel createTitle;
+    private javax.swing.JButton deleteButton;
     private javax.swing.JPanel detailsJPanel;
+    private javax.swing.JLabel detailsTitle;
     private javax.swing.JLabel emailID;
+    private javax.swing.JTable empTable;
     private javax.swing.JLabel employeeID;
     private javax.swing.JLabel employeeName;
     private javax.swing.JLabel gender;
-    private javax.swing.ButtonGroup genderButtonGroup;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel joiningDate;
     private javax.swing.JLabel level;
     private javax.swing.JLabel phoneNo;
     private javax.swing.JLabel photo;
     private javax.swing.JLabel position;
-    private javax.swing.JButton reset;
     private javax.swing.JLabel teamInfo;
     private javax.swing.JTextField tfAge;
     private javax.swing.JTextField tfEmail;
@@ -376,6 +323,30 @@ public class CreateJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField tfPhoneNo;
     private javax.swing.JTextField tfPosition;
     private javax.swing.JTextField tfTeam;
-    private javax.swing.JPanel titleJPanel;
+    private javax.swing.JButton updateButton;
+    private javax.swing.JButton viewButton;
     // End of variables declaration//GEN-END:variables
+
+    private void employeeDetailsTable() 
+    {
+        DefaultTableModel empDetailsTable = (DefaultTableModel) empTable.getModel();
+        empDetailsTable.setRowCount(0);
+        
+        for(Employee emp : history.getHistory())
+        {
+            Object[] record = new Object[10];
+            record[0] = emp.getEmployeeName();
+            record[1] = emp.getEmployeeID();
+            record[2] = emp.getAge();
+            record[3] = emp.getGender();
+            record[4] = emp.getStartDate();
+            record[5] = emp.getLevel();
+            record[6] = emp.getTeamInfo();
+            record[7] = emp.getPosition();
+            record[8] = emp.getContactNo();
+            record[9] = emp.getEmailID();
+            
+            empDetailsTable.addRow(record);
+        }
+    }
 }

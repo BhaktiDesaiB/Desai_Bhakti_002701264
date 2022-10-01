@@ -40,37 +40,21 @@ public class MainJFrame extends javax.swing.JFrame {
         controlPanel = new javax.swing.JPanel();
         createButton = new javax.swing.JButton();
         searchButton = new javax.swing.JButton();
-        updateButton = new javax.swing.JButton();
-        deleteButton = new javax.swing.JButton();
         detailsPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        createButton.setText("Create");
+        createButton.setText("Create new Employee");
         createButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 createButtonActionPerformed(evt);
             }
         });
 
-        searchButton.setText("Search");
+        searchButton.setText("View Employees");
         searchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchButtonActionPerformed(evt);
-            }
-        });
-
-        updateButton.setText("Update");
-        updateButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateButtonActionPerformed(evt);
-            }
-        });
-
-        deleteButton.setText("Delete");
-        deleteButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteButtonActionPerformed(evt);
             }
         });
 
@@ -82,13 +66,11 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(createButton)
-                    .addComponent(searchButton)
-                    .addComponent(updateButton)
-                    .addComponent(deleteButton))
-                .addContainerGap(22, Short.MAX_VALUE))
+                    .addComponent(searchButton))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        controlPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {createButton, deleteButton, searchButton, updateButton});
+        controlPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {createButton, searchButton});
 
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,14 +79,10 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(createButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(searchButton)
-                .addGap(12, 12, 12)
-                .addComponent(updateButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(deleteButton)
-                .addContainerGap(598, Short.MAX_VALUE))
+                .addContainerGap(666, Short.MAX_VALUE))
         );
 
-        controlPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {createButton, deleteButton, searchButton, updateButton});
+        controlPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {createButton, searchButton});
 
         splitPane.setLeftComponent(controlPanel);
 
@@ -141,23 +119,11 @@ public class MainJFrame extends javax.swing.JFrame {
         splitPane.setRightComponent(createPanel);
     }//GEN-LAST:event_createButtonActionPerformed
 
-    private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
-        // TODO add your handling code here:
-        UpdateJPanel updateEmp = new UpdateJPanel(emp);
-        splitPane.setRightComponent(updateEmp);
-    }//GEN-LAST:event_updateButtonActionPerformed
-
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
         // TODO add your handling code here:
-        SearchJPanel searchEmp = new SearchJPanel(emp);
+        ViewJPanel searchEmp = new ViewJPanel(history);
         splitPane.setRightComponent(searchEmp);
     }//GEN-LAST:event_searchButtonActionPerformed
-
-    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
-        // TODO add your handling code here:
-        DeleteJPanel deleteEmp = new DeleteJPanel(emp);
-        splitPane.setRightComponent(deleteEmp);
-    }//GEN-LAST:event_deleteButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,10 +163,8 @@ public class MainJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel controlPanel;
     private javax.swing.JButton createButton;
-    private javax.swing.JButton deleteButton;
     private javax.swing.JPanel detailsPanel;
     private javax.swing.JButton searchButton;
     private javax.swing.JSplitPane splitPane;
-    private javax.swing.JButton updateButton;
     // End of variables declaration//GEN-END:variables
 }
