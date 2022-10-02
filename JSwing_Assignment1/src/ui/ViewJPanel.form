@@ -87,7 +87,7 @@
                 <Column editable="false" title="Gender" type="java.lang.Object"/>
                 <Column editable="false" title="Joining Date" type="java.lang.Object"/>
                 <Column editable="false" title="Level" type="java.lang.Object"/>
-                <Column editable="false" title="Team Information" type="java.lang.Object"/>
+                <Column editable="false" title="Team Info" type="java.lang.Object"/>
                 <Column editable="false" title="Position" type="java.lang.Object"/>
                 <Column editable="false" title="Contact No." type="java.lang.Object"/>
                 <Column editable="false" title="Email ID" type="java.lang.Object"/>
@@ -171,6 +171,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Delete"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteButtonActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JPanel" name="detailsJPanel">
 

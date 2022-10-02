@@ -36,4 +36,9 @@ public class History
         return newEmployee;
     }
     
+    public void deleteEmployeeRecord(Employee emp)
+    {
+        history.remove(emp);
+    }
+    
 }

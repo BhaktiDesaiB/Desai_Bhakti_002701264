@@ -4,7 +4,8 @@
  */
 package ui;
 
-import javax.swing.table.DefaultTableModel;
+import javax.swing.JOptionPane;
+import javax.swing.table.*;
 import model.Employee;
 import model.History;
 
@@ -75,7 +76,7 @@ public class ViewJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Employee Name", "Employee ID", "Age", "Gender", "Joining Date", "Level", "Team Information", "Position", "Contact No.", "Email ID"
+                "Employee Name", "Employee ID", "Age", "Gender", "Joining Date", "Level", "Team Info", "Position", "Contact No.", "Email ID"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -98,6 +99,11 @@ public class ViewJPanel extends javax.swing.JPanel {
         updateButton.setText("Update");
 
         deleteButton.setText("Delete");
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
 
         employeeName.setText("Employee Name :");
 
@@ -294,6 +300,27 @@ public class ViewJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfPhoneNoActionPerformed
 
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+          // TODO add your handling code here:
+      int selectedRecordIndex = empTable.getSelectedRow();
+      
+      if (selectedRecordIndex<0)
+      {
+          JOptionPane.showMessageDialog(this, "Please select a record to delete");
+          return;
+      }
+      
+      DefaultTableModel empDetailsTable = (DefaultTableModel) empTable.getModel();
+      Employee selectedRecord = (Employee)empDetailsTable.getValueAt(selectedRecordIndex,0);
+        //Employee selectedRecord = (Employee) empDetailsTable.getValueAt(selectedRecordIndex,0);
+        
+      history.deleteEmployeeRecord(selectedRecord);
+      
+      JOptionPane.showMessageDialog(this,"Employee details deleted");
+      employeeDetailsTable();
+      
+    }//GEN-LAST:event_deleteButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel age;
@@ -334,7 +361,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         
         for(Employee emp : history.getHistory())
         {
-            Object[] record = new Object[10];
+            Object[] record = new Object[11];
             record[0] = emp.getEmployeeName();
             record[1] = emp.getEmployeeID();
             record[2] = emp.getAge();

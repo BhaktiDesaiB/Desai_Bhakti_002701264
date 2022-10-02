@@ -107,8 +107,6 @@ public class CreateJPanel extends javax.swing.JPanel {
 
         photo.setText("photo :");
 
-        tfName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
         tfAge.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfAgeActionPerformed(evt);
@@ -277,8 +275,6 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "Information reset");
-
         tfName.setText("");
         tfID.setText("");
         tfAge.setText("");
@@ -289,6 +285,8 @@ public class CreateJPanel extends javax.swing.JPanel {
         tfTeam.setText("");
         tfPhoneNo.setText("");
         tfEmail.setText("");
+        
+        JOptionPane.showMessageDialog(this, "Information reset");
     }//GEN-LAST:event_resetActionPerformed
 
     private void createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createActionPerformed
