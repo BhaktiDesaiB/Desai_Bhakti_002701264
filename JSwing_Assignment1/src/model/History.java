@@ -39,6 +39,7 @@ public class History
     public void deleteEmp(Employee e)
     {
         history.remove(e);
+        
     }
     
 }

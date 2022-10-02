@@ -92,7 +92,7 @@ public class CreateJPanel extends javax.swing.JPanel {
 
         gender.setText("Gender :");
 
-        joiningDate.setText("Joining Date : ");
+        joiningDate.setText("Joining Date :  (in dd/mm/yy)");
 
         level.setText("Level :");
 
@@ -108,6 +108,11 @@ public class CreateJPanel extends javax.swing.JPanel {
 
         photo.setText("photo :");
 
+        tfName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfNameActionPerformed(evt);
+            }
+        });
         tfName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 tfNameKeyPressed(evt);
@@ -397,6 +402,7 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void tfAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAgeActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_tfAgeActionPerformed
 
     private void tfGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfGenderActionPerformed
@@ -408,8 +414,6 @@ public class CreateJPanel extends javax.swing.JPanel {
         char c = evt.getKeyChar();
         if(Character.isLetter(c)||Character.isWhitespace(c)||Character.isISOControl(c))
         {
-            //ISO CONTROL FOR EDIT OPERATION (DELETE KEY AND BACKSPACE KEY)
-            //IF ENTERED CHARACTER IS LETTER,SPACE AND ISOCONTROL CHAR
             tfName.setEditable(true);  
         }
         else
@@ -435,22 +439,33 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void tfGenderKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfGenderKeyPressed
         // TODO add your handling code here:
-        String s = evt.toString();
-        if(s=="Male"||s=="Female"||s=="Others"|s=="male"||s=="female"||s=="others"|)
+        char c = evt.getKeyChar();
+        if(Character.isLetter(c))
         {
-            tfGender.setEditale(true);
+            if(c == 'M' ||c == 'F' || c == 'O' || c == 'm' ||c == 'f' || c == 'o')
+            {
+                tfGender.setEditable(true);
+            }
+           else
+            {
+                tfGender.setEditable(false);
+            JOptionPane.showMessageDialog(this, "Enter M for Male, F for Female, O for Other");
+            }
         }
-        else 
-        {
-            tfID.setEditable(false);
-            JOptionPane.showMessageDialog(this, "Enter valid data");
-        }
-        
     }//GEN-LAST:event_tfGenderKeyPressed
 
     private void tfJoiningDateKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfJoiningDateKeyPressed
         // TODO add your handling code here:
-        
+        char c = evt.getKeyChar();
+        if(Character.isWhitespace(c)||Character.isLetterOrDigit(c)||Character.isISOControl(c)||Character.isWhitespace(c))
+        {
+            tfJoiningDate.setEditable(true);  
+        }
+        else
+        {
+            tfJoiningDate.setEditable(false);
+            JOptionPane.showMessageDialog(this, "No special characters allowed!");
+        }
     }//GEN-LAST:event_tfJoiningDateKeyPressed
 
     private void tfLevelKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfLevelKeyPressed
@@ -484,14 +499,14 @@ public class CreateJPanel extends javax.swing.JPanel {
     private void tfPositionKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfPositionKeyPressed
         // TODO add your handling code here:
         char c = evt.getKeyChar();
-        if(Character.isDigit(c)||Character.isWhitespace(c))
+        if(Character.isLetter(c)||Character.isWhitespace(c))
         {
             tfPosition.setEditable(true);  
         }
         else
         {
             tfPosition.setEditable(false);
-            JOptionPane.showMessageDialog(this, "Enter in digits");
+            JOptionPane.showMessageDialog(this, "Enter in words");
         }
     }//GEN-LAST:event_tfPositionKeyPressed
 
@@ -500,33 +515,47 @@ public class CreateJPanel extends javax.swing.JPanel {
         char c = evt.getKeyChar();
         if(Character.isDigit(c)||Character.isWhitespace(c))
         {
-            tfName.setEditable(true);  
+            tfPhoneNo.setEditable(true); 
         }
         else
         {
-            tfName.setEditable(false);
+            tfPhoneNo.setEditable(false);
             JOptionPane.showMessageDialog(this, "Enter in digits! Phone number not valid");
         }
     }//GEN-LAST:event_tfPhoneNoKeyPressed
 
     private void tfEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfEmailKeyPressed
         // TODO add your handling code here:
-        
+         char c = evt.getKeyChar();
+        if(Character.isLetterOrDigit(c) || Character.isISOControl(c) || Character.isWhitespace(c) || c == '@' || c== '.')
+            {
+                tfEmail.setEditable(true);
+            }
+           else
+            {
+                tfEmail.setEditable(false);
+                JOptionPane.showMessageDialog(this, "enter valid email address");
+            }
     }//GEN-LAST:event_tfEmailKeyPressed
 
     private void tfAgeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfAgeKeyPressed
         // TODO add your handling code here:
         char c = evt.getKeyChar();
         if(Character.isDigit(c)||Character.isWhitespace(c))
-        {
-            tfName.setEditable(true);  
+        {   
+            
+            tfAge.setEditable(true);  
         }
         else
         {
-            tfName.setEditable(false);
-            JOptionPane.showMessageDialog(this, "Enter in digits! Phone number not valid");
+            tfAge.setEditable(false);
+            JOptionPane.showMessageDialog(this, "Enter a valid age");
         }
     }//GEN-LAST:event_tfAgeKeyPressed
+
+    private void tfNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfNameActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

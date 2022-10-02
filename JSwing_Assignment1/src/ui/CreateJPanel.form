@@ -229,7 +229,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="joiningDate">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Joining Date : "/>
+            <Property name="text" type="java.lang.String" value="Joining Date :  (in dd/mm/yy)"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="level">
@@ -269,6 +269,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="tfName">
           <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfNameActionPerformed"/>
             <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tfNameKeyPressed"/>
           </Events>
         </Component>

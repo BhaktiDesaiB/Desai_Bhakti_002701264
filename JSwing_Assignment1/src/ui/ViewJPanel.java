@@ -303,15 +303,15 @@ public class ViewJPanel extends javax.swing.JPanel {
 
     private void viewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewButtonActionPerformed
         // TODO add your handling code here:
-        int selectedRowIndex = empTable.getSelectedRow();
+        int selectedIndex = empTable.getSelectedRow();
         
-        if(selectedRowIndex<0)
+        if(selectedIndex<0)
         {
             JOptionPane.showMessageDialog(this, "Please select a record");
         }
         
         DefaultTableModel model = (DefaultTableModel) empTable.getModel();
-        Employee selectedEmp = (Employee)model.getValueAt(selectedRowIndex ,0);
+        Employee selectedEmp = (Employee) model.getValueAt(selectedIndex ,0);
         
         tfName.setText(selectedEmp.getEmployeeName());
         tfID.setText(selectedEmp.getEmployeeID());
@@ -340,46 +340,52 @@ public class ViewJPanel extends javax.swing.JPanel {
 
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
         // TODO add your handling code here:
-      int selectedRecordIndex = empTable.getSelectedRow();
-      DefaultTableModel model = (DefaultTableModel)empTable.getModel();   
-      if (selectedRecordIndex >= 0)
-      {
-        model.setValueAt(tfName.getText(),selectedRecordIndex,0);
-        model.setValueAt(tfID.getText(),selectedRecordIndex,1);
-        model.setValueAt(tfAge.getText(),selectedRecordIndex,2);
-        model.setValueAt(tfGender.getText(),selectedRecordIndex,3);
-        model.setValueAt(tfJoiningDate.getText(),selectedRecordIndex,4);
-        model.setValueAt(tfLevel.getText(),selectedRecordIndex,5);
-        model.setValueAt(tfTeam.getText(),selectedRecordIndex,6);
-        model.setValueAt(tfPosition.getText(),selectedRecordIndex,7);
-        model.setValueAt(tfPhoneNo.getText(),selectedRecordIndex,8);
-        model.setValueAt(tfEmail.getText(),selectedRecordIndex,9);
-      }
-      else
+      int selectedIndex = empTable.getSelectedRow();
+      DefaultTableModel model = (DefaultTableModel) empTable.getModel();  
+      Employee selectedEmp = (Employee) model.getValueAt(selectedIndex , 0);
+      if (selectedIndex < 0)
       {
         JOptionPane.showMessageDialog(null, "Please select a record to update");
       }
-      
-//      Employee selectedRecord = (Employee) model.getValueAt(selectedRecordIndex , 0);
-        
+      else
+      {
+        model.setValueAt(tfName.getText(),selectedIndex,0);
+        model.setValueAt(tfID.getText(),selectedIndex,1);
+        model.setValueAt(tfAge.getText(),selectedIndex,2);
+        model.setValueAt(tfGender.getText(),selectedIndex,3);
+        model.setValueAt(tfJoiningDate.getText(),selectedIndex,4);
+        model.setValueAt(tfLevel.getText(),selectedIndex,5);
+        model.setValueAt(tfTeam.getText(),selectedIndex,6);
+        model.setValueAt(tfPosition.getText(),selectedIndex,7);
+        model.setValueAt(tfPhoneNo.getText(),selectedIndex,8);
+        model.setValueAt(tfEmail.getText(),selectedIndex,9);
+        employeeDetailsTable();
+      }      
     }//GEN-LAST:event_updateButtonActionPerformed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         // TODO add your handling code here:
-        int selectedRowIndex = empTable.getSelectedRow();
-        
-        if(selectedRowIndex<0)
+        int selectedIndex = empTable.getSelectedRow();
+        if(selectedIndex<0)
         {
             JOptionPane.showMessageDialog(this,"Please select a row to delete");
             return;
         }
-        
         DefaultTableModel model = (DefaultTableModel) empTable.getModel();
-        //Employee selectedEmp = (Employee)model.getValueAt(selectedRowIndex,0);
-        history.deleteEmp((Employee)model.getValueAt(selectedRowIndex,0));
-        
+        Employee selectedEmp = (Employee) model.getValueAt(selectedIndex,0);
+        history.deleteEmp(selectedEmp);
         JOptionPane.showMessageDialog(this,"Employee details deleted");
         employeeDetailsTable();
+        tfName.setText("");
+        tfID.setText("");
+        tfAge.setText("");
+        tfGender.setText("");
+        tfJoiningDate.setText("");
+        tfLevel.setText("");
+        tfTeam.setText("");
+        tfPosition.setText("");
+        tfPhoneNo.setText("");
+        tfEmail.setText("");
     }//GEN-LAST:event_deleteButtonActionPerformed
 
 
