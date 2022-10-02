@@ -5,6 +5,7 @@
 package ui;
 
 import javax.swing.JOptionPane;
+import javax.swing.table.*;
 import model.Employee;
 import model.History;
 

@@ -42,7 +42,6 @@ public class ViewJPanel extends javax.swing.JPanel {
         empTable = new javax.swing.JTable();
         viewButton = new javax.swing.JButton();
         updateButton = new javax.swing.JButton();
-        deleteButton = new javax.swing.JButton();
         detailsJPanel = new javax.swing.JPanel();
         employeeName = new javax.swing.JLabel();
         employeeID = new javax.swing.JLabel();
@@ -66,6 +65,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         tfPhoneNo = new javax.swing.JTextField();
         tfEmail = new javax.swing.JTextField();
         tfGender = new javax.swing.JTextField();
+        deleteButton = new javax.swing.JButton();
 
         detailsTitle.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         detailsTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -88,6 +88,18 @@ public class ViewJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(empTable);
+        if (empTable.getColumnModel().getColumnCount() > 0) {
+            empTable.getColumnModel().getColumn(0).setHeaderValue("Employee Name");
+            empTable.getColumnModel().getColumn(1).setHeaderValue("Employee ID");
+            empTable.getColumnModel().getColumn(2).setHeaderValue("Age");
+            empTable.getColumnModel().getColumn(3).setHeaderValue("Gender");
+            empTable.getColumnModel().getColumn(4).setHeaderValue("Joining Date");
+            empTable.getColumnModel().getColumn(5).setHeaderValue("Level");
+            empTable.getColumnModel().getColumn(6).setHeaderValue("Team Info");
+            empTable.getColumnModel().getColumn(7).setHeaderValue("Position");
+            empTable.getColumnModel().getColumn(8).setHeaderValue("Contact No.");
+            empTable.getColumnModel().getColumn(9).setHeaderValue("Email ID");
+        }
 
         viewButton.setText("View");
         viewButton.addActionListener(new java.awt.event.ActionListener() {
@@ -97,11 +109,9 @@ public class ViewJPanel extends javax.swing.JPanel {
         });
 
         updateButton.setText("Update");
-
-        deleteButton.setText("Delete");
-        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+        updateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteButtonActionPerformed(evt);
+                updateButtonActionPerformed(evt);
             }
         });
 
@@ -241,6 +251,13 @@ public class ViewJPanel extends javax.swing.JPanel {
                 .addContainerGap(180, Short.MAX_VALUE))
         );
 
+        deleteButton.setText("Delete");
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -259,13 +276,13 @@ public class ViewJPanel extends javax.swing.JPanel {
                         .addComponent(updateButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(deleteButton)
-                        .addGap(16, 16, 16))))
+                        .addGap(13, 13, 13))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 61, Short.MAX_VALUE)
                 .addComponent(detailsJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {deleteButton, updateButton, viewButton});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {updateButton, viewButton});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -286,6 +303,26 @@ public class ViewJPanel extends javax.swing.JPanel {
 
     private void viewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewButtonActionPerformed
         // TODO add your handling code here:
+        int selectedRowIndex = empTable.getSelectedRow();
+        
+        if(selectedRowIndex<0){
+            JOptionPane.showMessageDialog(this, "Please select a record");
+        }
+        
+        DefaultTableModel aboutEmp = (DefaultTableModel) empTable.getModel();
+        Employee selectedEmp = (Employee) aboutEmp.getValueAt(selectedRowIndex ,0);
+        
+        tfName.setText(selectedEmp.getEmployeeName());
+        tfID.setText(selectedEmp.getEmployeeID());
+        tfAge.setText(String.valueOf(selectedEmp.getAge()));
+        tfGender.setText(selectedEmp.getGender());
+        tfJoiningDate.setText(selectedEmp.getStartDate());
+        tfLevel.setText(selectedEmp.getLevel());
+        tfTeam.setText(selectedEmp.getTeamInfo());
+        tfPosition.setText(selectedEmp.getPosition());
+        tfPhoneNo.setText(selectedEmp.getContactNo());
+        tfEmail.setText(selectedEmp.getEmailID());
+        
     }//GEN-LAST:event_viewButtonActionPerformed
 
     private void tfAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAgeActionPerformed
@@ -300,25 +337,39 @@ public class ViewJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfPhoneNoActionPerformed
 
-    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
-          // TODO add your handling code here:
+    private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
+        // TODO add your handling code here:
       int selectedRecordIndex = empTable.getSelectedRow();
       
       if (selectedRecordIndex<0)
       {
-          JOptionPane.showMessageDialog(this, "Please select a record to delete");
+          JOptionPane.showMessageDialog(this, "Please select a record to update");
           return;
       }
       
-      DefaultTableModel empDetailsTable = (DefaultTableModel) empTable.getModel();
-      Employee selectedRecord = (Employee)empDetailsTable.getValueAt(selectedRecordIndex,0);
-        //Employee selectedRecord = (Employee) empDetailsTable.getValueAt(selectedRecordIndex,0);
+      DefaultTableModel aboutEmp = (DefaultTableModel)empTable.getModel();
+      Employee selectedRecord = (Employee)aboutEmp.getValueAt(selectedRecordIndex , 0);
         
-      history.deleteEmployeeRecord(selectedRecord);
-      
-      JOptionPane.showMessageDialog(this,"Employee details deleted");
-      employeeDetailsTable();
-      
+    }//GEN-LAST:event_updateButtonActionPerformed
+
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = empTable.getSelectedRow();
+        
+        if(selectedRowIndex<0)
+        {
+            JOptionPane.showMessageDialog(this,"Please select a row to delete");
+            return;
+        }
+        
+        DefaultTableModel model = (DefaultTableModel) empTable.getModel();
+        Employee selectedEmp = (Employee) model.getValueAt(selectedRowIndex,0);
+        
+        history.deleteEmp(selectedEmp);
+        
+        JOptionPane.showMessageDialog(this,"Employee details deleted");
+
+        employeeDetailsTable();
     }//GEN-LAST:event_deleteButtonActionPerformed
 
 
@@ -329,7 +380,7 @@ public class ViewJPanel extends javax.swing.JPanel {
     private javax.swing.JPanel detailsJPanel;
     private javax.swing.JLabel detailsTitle;
     private javax.swing.JLabel emailID;
-    private javax.swing.JTable empTable;
+    public javax.swing.JTable empTable;
     private javax.swing.JLabel employeeID;
     private javax.swing.JLabel employeeName;
     private javax.swing.JLabel gender;
