@@ -594,12 +594,23 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void ImageButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImageButtonMouseClicked
         // TODO add your handling code here:
-//        JFileChooser chooser = new JFileChooser();
-//        chooser.showOpenDialog(null);
-//        File f = chooser.getSelectedFile();
-//        filename = f.getAbsolutePath();
-//        ImageIcon imageIcon = new ImageIcon(new ImageIcon(filename).getImage().getScaledInstance(img.getWidth(),img.getHeight(),Image.SCALE_SMOOTH));
-//        img.setIcon(imageIcon);
+//       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
         
     }//GEN-LAST:event_ImageButtonMouseClicked
