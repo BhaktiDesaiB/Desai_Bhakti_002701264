@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.util.Date;
+
 
 /**
  *
@@ -18,7 +20,7 @@ public class Employee {
     private String level;
     private String teamInfo;
     private String position;
-    private String contactNo;
+    private long contactNo;
     private String emailID;
     private String filename = null;
     private byte[] person_image=null;
@@ -63,6 +65,8 @@ public class Employee {
         this.startDate = startDate;
     }
 
+   
+
     public String getLevel() {
         return level;
     }
@@ -87,11 +91,11 @@ public class Employee {
         this.position = position;
     }
 
-    public String getContactNo() {
+    public long getContactNo() {
         return contactNo;
     }
 
-    public void setContactNo(String contactNo) {
+    public void setContactNo(long contactNo) {
         this.contactNo = contactNo;
     }
 
@@ -101,6 +105,22 @@ public class Employee {
 
     public void setEmailID(String emailID) {
         this.emailID = emailID;
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
+
+    public byte[] getPerson_image() {
+        return person_image;
+    }
+
+    public void setPerson_image(byte[] person_image) {
+        this.person_image = person_image;
     }
     
 }

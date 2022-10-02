@@ -19,13 +19,10 @@ public class MainJFrame extends javax.swing.JFrame {
      * Creates new form MainJFrame
      */
     
-    Employee emp;
     History history;
     
     public MainJFrame() {
         initComponents();
-        
-        emp = new Employee();
         history = new History();
     }
 

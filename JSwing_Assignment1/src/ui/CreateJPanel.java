@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.*;
+
 import model.Employee;
 import model.History;
 
@@ -98,7 +99,7 @@ public class CreateJPanel extends javax.swing.JPanel {
 
         gender.setText("Gender :");
 
-        joiningDate.setText("Joining Date :  (in dd/mm/yy)");
+        joiningDate.setText("Joining Date :  (in dd month year)");
 
         level.setText("Level :");
 
@@ -378,7 +379,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         tfPhoneNo.setText("");
         tfEmail.setText("");
         
-        JOptionPane.showMessageDialog(this, "Information reset");
+        JOptionPane.showMessageDialog(null, "Information reset");
     }//GEN-LAST:event_resetActionPerformed
 
     private void createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createActionPerformed
@@ -392,8 +393,9 @@ public class CreateJPanel extends javax.swing.JPanel {
         String level = tfLevel.getText();
         String position = tfPosition.getText();
         String teamInfo = tfTeam.getText();
-        String phoneNo = tfPhoneNo.getText();
+        long phoneNo = Long.parseLong(tfPhoneNo.getText());
         String emailID = tfEmail.getText();
+        
         byte[]image;
 
         Employee emp = history.addNewEmployee();
@@ -409,7 +411,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         emp.setContactNo(phoneNo);
         emp.setEmailID(emailID);
 
-        JOptionPane.showMessageDialog(this, "Employee Information Saved!");
+        JOptionPane.showMessageDialog(null, "Employee Information Saved!");
 
         tfName.setText("");
         tfID.setText("");
@@ -557,15 +559,19 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void tfEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfEmailKeyPressed
         // TODO add your handling code here:
+        
          char c = evt.getKeyChar();
-        if(Character.isLetterOrDigit(c) || Character.isISOControl(c) || Character.isWhitespace(c) || c == '@' || c== '.')
+        if(Character.isLetterOrDigit(c) || Character.isISOControl(c) || Character.isWhitespace(c) )
             {
-                tfEmail.setEditable(true);
-            }
-           else
-            {
-                tfEmail.setEditable(false);
-                JOptionPane.showMessageDialog(this, "enter valid email address");
+                if (c == '@' || c== '.' || Character.isLetterOrDigit(c))
+                {
+                    tfEmail.setEditable(true);
+                }
+                else
+                {
+                    tfEmail.setEditable(false);
+                    JOptionPane.showMessageDialog(this, "enter valid email address");
+                }
             }
     }//GEN-LAST:event_tfEmailKeyPressed
 

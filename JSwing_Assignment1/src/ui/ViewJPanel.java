@@ -4,8 +4,10 @@
  */
 package ui;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.*;
+
 import model.Employee;
 import model.History;
 
@@ -22,7 +24,6 @@ public class ViewJPanel extends javax.swing.JPanel {
     History history;
     public ViewJPanel(History history) {
         initComponents();
-        
         this.history = history;
         
         employeeDetailsTable();
@@ -311,7 +312,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         }
         
         DefaultTableModel model = (DefaultTableModel) empTable.getModel();
-        Employee selectedEmp = (Employee) model.getValueAt(selectedIndex ,0);
+        Employee selectedEmp = (Employee) history.getHistory().get(selectedIndex);
         
         tfName.setText(selectedEmp.getEmployeeName());
         tfID.setText(selectedEmp.getEmployeeID());
@@ -321,7 +322,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         tfLevel.setText(selectedEmp.getLevel());
         tfTeam.setText(selectedEmp.getTeamInfo());
         tfPosition.setText(selectedEmp.getPosition());
-        tfPhoneNo.setText(selectedEmp.getContactNo());
+        tfPhoneNo.setText(String.valueOf(selectedEmp.getContactNo()));
         tfEmail.setText(selectedEmp.getEmailID());
         
     }//GEN-LAST:event_viewButtonActionPerformed
@@ -340,27 +341,31 @@ public class ViewJPanel extends javax.swing.JPanel {
 
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
         // TODO add your handling code here:
-      int selectedIndex = empTable.getSelectedRow();
-      DefaultTableModel model = (DefaultTableModel) empTable.getModel();  
-      Employee selectedEmp = (Employee) model.getValueAt(selectedIndex , 0);
-      if (selectedIndex < 0)
-      {
-        JOptionPane.showMessageDialog(null, "Please select a record to update");
-      }
-      else
-      {
-        model.setValueAt(tfName.getText(),selectedIndex,0);
-        model.setValueAt(tfID.getText(),selectedIndex,1);
-        model.setValueAt(tfAge.getText(),selectedIndex,2);
-        model.setValueAt(tfGender.getText(),selectedIndex,3);
-        model.setValueAt(tfJoiningDate.getText(),selectedIndex,4);
-        model.setValueAt(tfLevel.getText(),selectedIndex,5);
-        model.setValueAt(tfTeam.getText(),selectedIndex,6);
-        model.setValueAt(tfPosition.getText(),selectedIndex,7);
-        model.setValueAt(tfPhoneNo.getText(),selectedIndex,8);
-        model.setValueAt(tfEmail.getText(),selectedIndex,9);
-        employeeDetailsTable();
-      }      
+        int selectedIndex = empTable.getSelectedRow();
+        if(selectedIndex<0)
+        {
+            JOptionPane.showMessageDialog(null,"Please select a row to update");
+            return;
+        }
+        DefaultTableModel model = (DefaultTableModel) empTable.getModel();
+        
+        if(selectedIndex>=0)
+        {
+            model.setValueAt(tfName.getText(),selectedIndex,0);
+            model.setValueAt(tfID.getText(),selectedIndex,1);
+            model.setValueAt(tfAge.getText(),selectedIndex,2);
+            model.setValueAt(tfGender.getText(),selectedIndex,3);
+            model.setValueAt(tfJoiningDate.getText(),selectedIndex,4);
+            model.setValueAt(tfLevel.getText(),selectedIndex,5);
+            model.setValueAt(tfTeam.getText(),selectedIndex,6);
+            model.setValueAt(tfPosition.getText(),selectedIndex,7);
+            model.setValueAt(tfPhoneNo.getText(),selectedIndex,8);
+            model.setValueAt(tfEmail.getText(),selectedIndex,9);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Error!");
+        }
     }//GEN-LAST:event_updateButtonActionPerformed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
@@ -368,14 +373,17 @@ public class ViewJPanel extends javax.swing.JPanel {
         int selectedIndex = empTable.getSelectedRow();
         if(selectedIndex<0)
         {
-            JOptionPane.showMessageDialog(this,"Please select a row to delete");
+            JOptionPane.showMessageDialog(null,"Please select a row to delete");
             return;
         }
         DefaultTableModel model = (DefaultTableModel) empTable.getModel();
-        Employee selectedEmp = (Employee) model.getValueAt(selectedIndex,0);
+        Employee selectedEmp = (Employee) history.getHistory().get(selectedIndex);
         history.deleteEmp(selectedEmp);
-        JOptionPane.showMessageDialog(this,"Employee details deleted");
+        
+        model.removeRow(selectedIndex);
+        JOptionPane.showMessageDialog(null,"Employee details deleted");
         employeeDetailsTable();
+       
         tfName.setText("");
         tfID.setText("");
         tfAge.setText("");
@@ -424,10 +432,20 @@ public class ViewJPanel extends javax.swing.JPanel {
     private void employeeDetailsTable() 
     {
         DefaultTableModel model = (DefaultTableModel) empTable.getModel();
-        model.setRowCount(0);
         
-        for(Employee emp : history.getHistory())
+        Object[][] rows = new Object [history.getHistory().size()][11];
+        
+        for(int i=0; i < history.getHistory().size();i++)
         {
+            System.out.println(history.getHistory().get(i));
+        }
+        
+        ArrayList<Employee> empList = history.getHistory();
+        
+        for(int i = 0; i < empList.size(); i++)
+        {
+            Employee emp = empList.get(i);
+            
             Object[] record = new Object[11];
             record[0] = emp.getEmployeeName();
             record[1] = emp.getEmployeeID();
