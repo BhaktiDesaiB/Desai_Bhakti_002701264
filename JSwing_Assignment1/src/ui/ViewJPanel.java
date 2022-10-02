@@ -67,10 +67,15 @@ public class ViewJPanel extends javax.swing.JPanel {
         tfGender = new javax.swing.JTextField();
         deleteButton = new javax.swing.JButton();
 
-        detailsTitle.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        detailsTitle.setBackground(new java.awt.Color(200, 242, 200));
+        detailsTitle.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         detailsTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         detailsTitle.setText("View Employee Details");
 
+        empTable.setAutoCreateRowSorter(true);
+        empTable.setBackground(new java.awt.Color(200, 255, 200));
+        empTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        empTable.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         empTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -79,27 +84,22 @@ public class ViewJPanel extends javax.swing.JPanel {
                 "Employee Name", "Employee ID", "Age", "Gender", "Joining Date", "Level", "Team Info", "Position", "Contact No.", "Email ID"
             }
         ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false, false, false, false, false
             };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
         jScrollPane1.setViewportView(empTable);
-        if (empTable.getColumnModel().getColumnCount() > 0) {
-            empTable.getColumnModel().getColumn(0).setHeaderValue("Employee Name");
-            empTable.getColumnModel().getColumn(1).setHeaderValue("Employee ID");
-            empTable.getColumnModel().getColumn(2).setHeaderValue("Age");
-            empTable.getColumnModel().getColumn(3).setHeaderValue("Gender");
-            empTable.getColumnModel().getColumn(4).setHeaderValue("Joining Date");
-            empTable.getColumnModel().getColumn(5).setHeaderValue("Level");
-            empTable.getColumnModel().getColumn(6).setHeaderValue("Team Info");
-            empTable.getColumnModel().getColumn(7).setHeaderValue("Position");
-            empTable.getColumnModel().getColumn(8).setHeaderValue("Contact No.");
-            empTable.getColumnModel().getColumn(9).setHeaderValue("Email ID");
-        }
 
         viewButton.setText("View");
         viewButton.addActionListener(new java.awt.event.ActionListener() {
@@ -248,7 +248,7 @@ public class ViewJPanel extends javax.swing.JPanel {
                     .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(photo)
-                .addContainerGap(180, Short.MAX_VALUE))
+                .addContainerGap(149, Short.MAX_VALUE))
         );
 
         deleteButton.setText("Delete");
@@ -305,12 +305,13 @@ public class ViewJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectedRowIndex = empTable.getSelectedRow();
         
-        if(selectedRowIndex<0){
+        if(selectedRowIndex<0)
+        {
             JOptionPane.showMessageDialog(this, "Please select a record");
         }
         
-        DefaultTableModel aboutEmp = (DefaultTableModel) empTable.getModel();
-        Employee selectedEmp = (Employee) aboutEmp.getValueAt(selectedRowIndex ,0);
+        DefaultTableModel model = (DefaultTableModel) empTable.getModel();
+        Employee selectedEmp = (Employee)model.getValueAt(selectedRowIndex ,0);
         
         tfName.setText(selectedEmp.getEmployeeName());
         tfID.setText(selectedEmp.getEmployeeID());
@@ -340,15 +341,26 @@ public class ViewJPanel extends javax.swing.JPanel {
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
         // TODO add your handling code here:
       int selectedRecordIndex = empTable.getSelectedRow();
-      
-      if (selectedRecordIndex<0)
+      DefaultTableModel model = (DefaultTableModel)empTable.getModel();   
+      if (selectedRecordIndex >= 0)
       {
-          JOptionPane.showMessageDialog(this, "Please select a record to update");
-          return;
+        model.setValueAt(tfName.getText(),selectedRecordIndex,0);
+        model.setValueAt(tfID.getText(),selectedRecordIndex,1);
+        model.setValueAt(tfAge.getText(),selectedRecordIndex,2);
+        model.setValueAt(tfGender.getText(),selectedRecordIndex,3);
+        model.setValueAt(tfJoiningDate.getText(),selectedRecordIndex,4);
+        model.setValueAt(tfLevel.getText(),selectedRecordIndex,5);
+        model.setValueAt(tfTeam.getText(),selectedRecordIndex,6);
+        model.setValueAt(tfPosition.getText(),selectedRecordIndex,7);
+        model.setValueAt(tfPhoneNo.getText(),selectedRecordIndex,8);
+        model.setValueAt(tfEmail.getText(),selectedRecordIndex,9);
+      }
+      else
+      {
+        JOptionPane.showMessageDialog(null, "Please select a record to update");
       }
       
-      DefaultTableModel aboutEmp = (DefaultTableModel)empTable.getModel();
-      Employee selectedRecord = (Employee)aboutEmp.getValueAt(selectedRecordIndex , 0);
+//      Employee selectedRecord = (Employee) model.getValueAt(selectedRecordIndex , 0);
         
     }//GEN-LAST:event_updateButtonActionPerformed
 
@@ -363,12 +375,10 @@ public class ViewJPanel extends javax.swing.JPanel {
         }
         
         DefaultTableModel model = (DefaultTableModel) empTable.getModel();
-        Employee selectedEmp = (Employee) model.getValueAt(selectedRowIndex,0);
-        
-        history.deleteEmp(selectedEmp);
+        //Employee selectedEmp = (Employee)model.getValueAt(selectedRowIndex,0);
+        history.deleteEmp((Employee)model.getValueAt(selectedRowIndex,0));
         
         JOptionPane.showMessageDialog(this,"Employee details deleted");
-
         employeeDetailsTable();
     }//GEN-LAST:event_deleteButtonActionPerformed
 
@@ -407,8 +417,8 @@ public class ViewJPanel extends javax.swing.JPanel {
 
     private void employeeDetailsTable() 
     {
-        DefaultTableModel empDetailsTable = (DefaultTableModel) empTable.getModel();
-        empDetailsTable.setRowCount(0);
+        DefaultTableModel model = (DefaultTableModel) empTable.getModel();
+        model.setRowCount(0);
         
         for(Employee emp : history.getHistory())
         {
@@ -424,7 +434,7 @@ public class ViewJPanel extends javax.swing.JPanel {
             record[8] = emp.getContactNo();
             record[9] = emp.getEmailID();
             
-            empDetailsTable.addRow(record);
+            model.addRow(record);
         }
     }
 }

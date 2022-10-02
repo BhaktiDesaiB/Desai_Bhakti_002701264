@@ -108,9 +108,26 @@ public class CreateJPanel extends javax.swing.JPanel {
 
         photo.setText("photo :");
 
+        tfName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfNameKeyPressed(evt);
+            }
+        });
+
+        tfID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfIDKeyPressed(evt);
+            }
+        });
+
         tfAge.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfAgeActionPerformed(evt);
+            }
+        });
+        tfAge.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfAgeKeyPressed(evt);
             }
         });
 
@@ -119,10 +136,44 @@ public class CreateJPanel extends javax.swing.JPanel {
                 tfJoiningDateActionPerformed(evt);
             }
         });
+        tfJoiningDate.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfJoiningDateKeyPressed(evt);
+            }
+        });
+
+        tfLevel.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfLevelKeyPressed(evt);
+            }
+        });
+
+        tfTeam.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfTeamKeyPressed(evt);
+            }
+        });
+
+        tfPosition.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfPositionKeyPressed(evt);
+            }
+        });
 
         tfPhoneNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfPhoneNoActionPerformed(evt);
+            }
+        });
+        tfPhoneNo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfPhoneNoKeyPressed(evt);
+            }
+        });
+
+        tfEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfEmailKeyPressed(evt);
             }
         });
 
@@ -143,6 +194,11 @@ public class CreateJPanel extends javax.swing.JPanel {
         tfGender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfGenderActionPerformed(evt);
+            }
+        });
+        tfGender.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfGenderKeyPressed(evt);
             }
         });
 
@@ -309,6 +365,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         emp.setEmployeeName(name);
         emp.setEmployeeID(empID);
         emp.setAge(age);
+        emp.setGender(gender);
         emp.setStartDate(joiningDate);
         emp.setLevel(level);
         emp.setPosition(position);
@@ -345,6 +402,131 @@ public class CreateJPanel extends javax.swing.JPanel {
     private void tfGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfGenderActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfGenderActionPerformed
+
+    private void tfNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfNameKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isLetter(c)||Character.isWhitespace(c)||Character.isISOControl(c))
+        {
+            //ISO CONTROL FOR EDIT OPERATION (DELETE KEY AND BACKSPACE KEY)
+            //IF ENTERED CHARACTER IS LETTER,SPACE AND ISOCONTROL CHAR
+            tfName.setEditable(true);  
+        }
+        else
+        {
+            tfName.setEditable(false);
+            JOptionPane.showMessageDialog(this, "Please enter character");
+        }
+    }//GEN-LAST:event_tfNameKeyPressed
+
+    private void tfIDKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfIDKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isWhitespace(c)||Character.isISOControl(c)||Character.isLetterOrDigit(c))
+        {
+            tfID.setEditable(true);  
+        }
+        else
+        {
+            tfID.setEditable(false);
+            JOptionPane.showMessageDialog(this, "No special characters allowed!");
+        }
+    }//GEN-LAST:event_tfIDKeyPressed
+
+    private void tfGenderKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfGenderKeyPressed
+        // TODO add your handling code here:
+        String s = evt.toString();
+        if(s=="Male"||s=="Female"||s=="Others"|s=="male"||s=="female"||s=="others"|)
+        {
+            tfGender.setEditale(true);
+        }
+        else 
+        {
+            tfID.setEditable(false);
+            JOptionPane.showMessageDialog(this, "Enter valid data");
+        }
+        
+    }//GEN-LAST:event_tfGenderKeyPressed
+
+    private void tfJoiningDateKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfJoiningDateKeyPressed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_tfJoiningDateKeyPressed
+
+    private void tfLevelKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfLevelKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isWhitespace(c)||Character.isLetterOrDigit(c))
+        {
+            tfLevel.setEditable(true);  
+        }
+        else
+        {
+            tfLevel.setEditable(false);
+            JOptionPane.showMessageDialog(this, "No special characters allowed!");
+        }
+    }//GEN-LAST:event_tfLevelKeyPressed
+
+    private void tfTeamKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfTeamKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isLetter(c)||Character.isWhitespace(c))
+        {
+            tfTeam.setEditable(true);  
+        }
+        else
+        {
+            tfTeam.setEditable(false);
+            JOptionPane.showMessageDialog(this, "Numbers and special characters not allowed");
+        }
+    }//GEN-LAST:event_tfTeamKeyPressed
+
+    private void tfPositionKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfPositionKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)||Character.isWhitespace(c))
+        {
+            tfPosition.setEditable(true);  
+        }
+        else
+        {
+            tfPosition.setEditable(false);
+            JOptionPane.showMessageDialog(this, "Enter in digits");
+        }
+    }//GEN-LAST:event_tfPositionKeyPressed
+
+    private void tfPhoneNoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfPhoneNoKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)||Character.isWhitespace(c))
+        {
+            tfName.setEditable(true);  
+        }
+        else
+        {
+            tfName.setEditable(false);
+            JOptionPane.showMessageDialog(this, "Enter in digits! Phone number not valid");
+        }
+    }//GEN-LAST:event_tfPhoneNoKeyPressed
+
+    private void tfEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfEmailKeyPressed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_tfEmailKeyPressed
+
+    private void tfAgeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfAgeKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)||Character.isWhitespace(c))
+        {
+            tfName.setEditable(true);  
+        }
+        else
+        {
+            tfName.setEditable(false);
+            JOptionPane.showMessageDialog(this, "Enter in digits! Phone number not valid");
+        }
+    }//GEN-LAST:event_tfAgeKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

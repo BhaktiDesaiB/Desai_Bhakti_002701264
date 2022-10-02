@@ -4,6 +4,8 @@
  */
 package ui;
 
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import model.Employee;
 import model.History;
 
@@ -44,6 +46,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        createButton.setBackground(new java.awt.Color(200, 255, 200));
+        createButton.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         createButton.setText("Create new Employee");
         createButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,6 +55,8 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        searchButton.setBackground(new java.awt.Color(200, 255, 200));
+        searchButton.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         searchButton.setText("View Employees");
         searchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,7 +85,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(createButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(searchButton)
-                .addContainerGap(666, Short.MAX_VALUE))
+                .addContainerGap(674, Short.MAX_VALUE))
         );
 
         controlPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {createButton, searchButton});
@@ -94,7 +100,7 @@ public class MainJFrame extends javax.swing.JFrame {
         );
         detailsPanelLayout.setVerticalGroup(
             detailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGap(0, 822, Short.MAX_VALUE)
         );
 
         splitPane.setRightComponent(detailsPanel);

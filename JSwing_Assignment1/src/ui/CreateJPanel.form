@@ -268,31 +268,52 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfName">
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tfNameKeyPressed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="tfID">
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tfIDKeyPressed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="tfAge">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfAgeActionPerformed"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tfAgeKeyPressed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="tfJoiningDate">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfJoiningDateActionPerformed"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tfJoiningDateKeyPressed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="tfLevel">
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tfLevelKeyPressed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="tfTeam">
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tfTeamKeyPressed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="tfPosition">
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tfPositionKeyPressed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="tfPhoneNo">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfPhoneNoActionPerformed"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tfPhoneNoKeyPressed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="tfEmail">
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tfEmailKeyPressed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="create">
           <Properties>
@@ -313,6 +334,7 @@
         <Component class="javax.swing.JTextField" name="tfGender">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfGenderActionPerformed"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tfGenderKeyPressed"/>
           </Events>
         </Component>
       </SubComponents>
