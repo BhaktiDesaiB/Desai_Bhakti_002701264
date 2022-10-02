@@ -20,6 +20,8 @@ public class Employee {
     private String position;
     private String contactNo;
     private String emailID;
+    private String filename = null;
+    private byte[] person_image=null;
 
     public String getEmployeeName() {
         return employeeName;
