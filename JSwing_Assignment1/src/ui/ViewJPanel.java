@@ -347,6 +347,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         tfPhoneNo.setText(String.valueOf(selectedEmp.getContactNo()));
         tfEmail.setText(selectedEmp.getEmailID());
         tfImagePath.setText(selectedEmp.getFilename());
+        viewImage.getIcon();
         
     }//GEN-LAST:event_viewButtonActionPerformed
 
