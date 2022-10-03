@@ -55,7 +55,6 @@ public class ViewJPanel extends javax.swing.JPanel {
         contactInfo = new javax.swing.JLabel();
         phoneNo = new javax.swing.JLabel();
         emailID = new javax.swing.JLabel();
-        photo = new javax.swing.JLabel();
         tfName = new javax.swing.JTextField();
         tfID = new javax.swing.JTextField();
         tfAge = new javax.swing.JTextField();
@@ -69,6 +68,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         deleteButton = new javax.swing.JButton();
         viewPhoto = new javax.swing.JLabel();
         viewImage = new javax.swing.JLabel();
+        tfImagePath = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 226, 225));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -87,14 +87,14 @@ public class ViewJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Employee Name", "Employee ID", "Age", "Gender", "Joining Date", "Level", "Team Info", "Position", "Contact No.", "Email ID"
+                "Name", "Employee ID", "Age", "Gender", "Joining Date", "Level", "Team Info", "Position", "Contact No.", "Email ID", "Image Path"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Long.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -150,8 +150,6 @@ public class ViewJPanel extends javax.swing.JPanel {
 
         emailID.setText("email-id : ");
 
-        photo.setText("photo :");
-
         tfAge.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfAgeActionPerformed(evt);
@@ -177,42 +175,37 @@ public class ViewJPanel extends javax.swing.JPanel {
             .addGroup(detailsJPanelLayout.createSequentialGroup()
                 .addGap(55, 55, 55)
                 .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(detailsJPanelLayout.createSequentialGroup()
-                        .addComponent(photo)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(emailID, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(phoneNo, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(position, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(teamInfo, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(level, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(joiningDate, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(age, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(detailsJPanelLayout.createSequentialGroup()
+                            .addComponent(employeeName)
+                            .addGap(120, 120, 120)))
                     .addGroup(detailsJPanelLayout.createSequentialGroup()
                         .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(emailID, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(phoneNo, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(position, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(teamInfo, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(level, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(joiningDate, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(age, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(detailsJPanelLayout.createSequentialGroup()
-                                    .addComponent(employeeName)
-                                    .addGap(120, 120, 120)))
-                            .addGroup(detailsJPanelLayout.createSequentialGroup()
-                                .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(employeeID)
-                                    .addComponent(gender)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, detailsJPanelLayout.createSequentialGroup()
-                                        .addGap(38, 38, 38)
-                                        .addComponent(contactInfo)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                        .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(tfJoiningDate, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfAge, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfID, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfName, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfLevel, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfTeam, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfPosition, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfPhoneNo, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfEmail, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfGender, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE))
-                        .addGap(124, 124, 124))))
+                            .addComponent(employeeID)
+                            .addComponent(gender)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, detailsJPanelLayout.createSequentialGroup()
+                                .addGap(38, 38, 38)
+                                .addComponent(contactInfo)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(tfJoiningDate, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tfAge, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tfID, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tfName, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tfLevel, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tfTeam, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tfPosition, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tfPhoneNo, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tfEmail, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tfGender, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE))
+                .addGap(124, 124, 124))
         );
         detailsJPanelLayout.setVerticalGroup(
             detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,9 +252,7 @@ public class ViewJPanel extends javax.swing.JPanel {
                 .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(emailID)
                     .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(photo)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         deleteButton.setBackground(new java.awt.Color(255, 204, 255));
@@ -275,6 +266,12 @@ public class ViewJPanel extends javax.swing.JPanel {
 
         viewPhoto.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         viewPhoto.setText("Photo :");
+
+        tfImagePath.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfImagePathActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -297,7 +294,9 @@ public class ViewJPanel extends javax.swing.JPanel {
                 .addGap(41, 41, 41)
                 .addComponent(viewPhoto)
                 .addGap(12, 12, 12)
-                .addComponent(viewImage, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(tfImagePath)
+                    .addComponent(viewImage, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -318,7 +317,10 @@ public class ViewJPanel extends javax.swing.JPanel {
                         .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(viewPhoto)
-                            .addComponent(viewImage, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(viewImage, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfImagePath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -344,6 +346,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         tfPosition.setText(selectedEmp.getPosition());
         tfPhoneNo.setText(String.valueOf(selectedEmp.getContactNo()));
         tfEmail.setText(selectedEmp.getEmailID());
+        tfImagePath.setText(selectedEmp.getFilename());
         
     }//GEN-LAST:event_viewButtonActionPerformed
 
@@ -381,6 +384,7 @@ public class ViewJPanel extends javax.swing.JPanel {
             model.setValueAt(tfPosition.getText(),selectedIndex,7);
             model.setValueAt(tfPhoneNo.getText(),selectedIndex,8);
             model.setValueAt(tfEmail.getText(),selectedIndex,9);
+            model.setValueAt(tfImagePath.getText(),selectedIndex,10);
         }
         else
         {
@@ -414,7 +418,12 @@ public class ViewJPanel extends javax.swing.JPanel {
         tfPosition.setText("");
         tfPhoneNo.setText("");
         tfEmail.setText("");
+        tfImagePath.setText("");
     }//GEN-LAST:event_deleteButtonActionPerformed
+
+    private void tfImagePathActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfImagePathActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfImagePathActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -432,13 +441,13 @@ public class ViewJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel joiningDate;
     private javax.swing.JLabel level;
     private javax.swing.JLabel phoneNo;
-    private javax.swing.JLabel photo;
     private javax.swing.JLabel position;
     private javax.swing.JLabel teamInfo;
     private javax.swing.JTextField tfAge;
     private javax.swing.JTextField tfEmail;
     private javax.swing.JTextField tfGender;
     private javax.swing.JTextField tfID;
+    private javax.swing.JTextField tfImagePath;
     private javax.swing.JTextField tfJoiningDate;
     private javax.swing.JTextField tfLevel;
     private javax.swing.JTextField tfName;
@@ -479,6 +488,7 @@ public class ViewJPanel extends javax.swing.JPanel {
             record[7] = emp.getPosition();
             record[8] = emp.getContactNo();
             record[9] = emp.getEmailID();
+            record[10] = emp.getFilename();
             
             model.addRow(record);
         }

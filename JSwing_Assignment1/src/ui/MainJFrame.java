@@ -45,6 +45,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        controlPanel.setBackground(new java.awt.Color(255, 236, 239));
         controlPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         createButton.setBackground(new java.awt.Color(252, 201, 230));
@@ -69,6 +70,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         splitPane.setLeftComponent(controlPanel);
 
+        detailsPanel.setBackground(new java.awt.Color(255, 236, 239));
         detailsPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 204, 204));

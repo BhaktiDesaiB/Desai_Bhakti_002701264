@@ -71,6 +71,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         photo = new javax.swing.JLabel();
         imageURL = new javax.swing.JLabel();
         btnImage = new javax.swing.JButton();
+        tfImagePath = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(253, 227, 222));
 
@@ -229,29 +230,20 @@ public class CreateJPanel extends javax.swing.JPanel {
         detailsJPanelLayout.setHorizontalGroup(
             detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(detailsJPanelLayout.createSequentialGroup()
+                .addGap(55, 55, 55)
                 .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(detailsJPanelLayout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(emailID, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(phoneNo, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(position, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(teamInfo, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(level, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(joiningDate, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(age, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(detailsJPanelLayout.createSequentialGroup()
-                                    .addComponent(employeeName)
-                                    .addGap(120, 120, 120)))
+                        .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(emailID, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(phoneNo, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(position, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(teamInfo, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(level, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(joiningDate, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(age, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(detailsJPanelLayout.createSequentialGroup()
-                                .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(employeeID)
-                                    .addComponent(gender)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, detailsJPanelLayout.createSequentialGroup()
-                                        .addGap(38, 38, 38)
-                                        .addComponent(contactInfo)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                .addComponent(employeeName)
+                                .addGap(120, 120, 120)))
                         .addGap(0, 58, Short.MAX_VALUE)
                         .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(tfGender, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
@@ -263,14 +255,20 @@ public class CreateJPanel extends javax.swing.JPanel {
                             .addComponent(tfTeam, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
                             .addComponent(tfPosition, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
                             .addComponent(tfPhoneNo, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                            .addComponent(tfEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)))
+                            .addComponent(tfEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE))
+                        .addGap(29, 29, 29))
                     .addGroup(detailsJPanelLayout.createSequentialGroup()
-                        .addGap(126, 126, 126)
-                        .addComponent(create)
-                        .addGap(48, 48, 48)
+                        .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(employeeID)
+                            .addComponent(gender)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, detailsJPanelLayout.createSequentialGroup()
+                                .addGap(38, 38, 38)
+                                .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(contactInfo, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(create, javax.swing.GroupLayout.Alignment.TRAILING))))
+                        .addGap(33, 33, 33)
                         .addComponent(reset)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(29, 29, 29))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         detailsJPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {tfAge, tfEmail, tfGender, tfID, tfJoiningDate, tfLevel, tfName, tfPhoneNo, tfPosition, tfTeam});
@@ -324,11 +322,11 @@ public class CreateJPanel extends javax.swing.JPanel {
                             .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, detailsJPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
                         .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(reset)
-                            .addComponent(create))
-                        .addGap(97, 97, 97))))
+                            .addComponent(create)
+                            .addComponent(reset))
+                        .addGap(52, 52, 52))))
         );
 
         photo.setFont(new java.awt.Font("Microsoft JhengHei Light", 0, 12)); // NOI18N
@@ -351,8 +349,9 @@ public class CreateJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(detailsJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68)
+                .addGap(56, 56, 56)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tfImagePath, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(photo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -367,19 +366,57 @@ public class CreateJPanel extends javax.swing.JPanel {
                 .addComponent(titleJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(detailsJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(photo)
                             .addComponent(btnImage))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(imageURL, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tfImagePath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(detailsJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnImageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImageActionPerformed
+        // TODO add your handling code here:
+        JFileChooser chooser = new JFileChooser();
+        chooser.showOpenDialog(null);
+        File f = chooser.getSelectedFile();
+        String filename = f.getAbsolutePath();
+        tfImagePath.setText(filename);
+        Image getAbsolutePath = null;
+        ImageIcon icon = new ImageIcon(filename);
+        Image image = icon.getImage().getScaledInstance(imageURL.getWidth(), imageURL.getHeight(), Image.SCALE_SMOOTH);
+        imageURL.setIcon(icon);
+        
+        
+    }//GEN-LAST:event_btnImageActionPerformed
+
+    private void tfGenderKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfGenderKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isLetter(c))
+        {
+            if(c == 'M' ||c == 'F' || c == 'O' || c == 'm' ||c == 'f' || c == 'o')
+            {
+                tfGender.setEditable(true);
+            }
+            else
+            {
+                tfGender.setEditable(false);
+                JOptionPane.showMessageDialog(this, "Enter M for Male, F for Female, O for Other");
+            }
+        }
+    }//GEN-LAST:event_tfGenderKeyPressed
+
+    private void tfGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfGenderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfGenderActionPerformed
 
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
         // TODO add your handling code here:
@@ -393,7 +430,9 @@ public class CreateJPanel extends javax.swing.JPanel {
         tfTeam.setText("");
         tfPhoneNo.setText("");
         tfEmail.setText("");
-        
+        tfImagePath.setText("");
+        imageURL.setIcon(null);
+
         JOptionPane.showMessageDialog(null, "Information reset");
     }//GEN-LAST:event_resetActionPerformed
 
@@ -410,7 +449,8 @@ public class CreateJPanel extends javax.swing.JPanel {
         String teamInfo = tfTeam.getText();
         long phoneNo = Long.parseLong(tfPhoneNo.getText());
         String emailID = tfEmail.getText();
-        
+        String image = tfImagePath.getText();
+        image = image.replace("\\", "\\\\");
         
         Employee emp = history.addNewEmployee();
 
@@ -424,6 +464,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         emp.setTeamInfo(teamInfo);
         emp.setContactNo(phoneNo);
         emp.setEmailID(emailID);
+        emp.setFilename(image);
 
         JOptionPane.showMessageDialog(null, "Employee Information Saved!");
 
@@ -437,132 +478,34 @@ public class CreateJPanel extends javax.swing.JPanel {
         tfTeam.setText("");
         tfPhoneNo.setText("");
         tfEmail.setText("");
+        tfImagePath.setText("");
+        imageURL.setIcon(null);
     }//GEN-LAST:event_createActionPerformed
 
-    private void tfPhoneNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPhoneNoActionPerformed
+    private void tfEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfEmailKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfPhoneNoActionPerformed
 
-    private void tfJoiningDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfJoiningDateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfJoiningDateActionPerformed
-
-    private void tfAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAgeActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_tfAgeActionPerformed
-
-    private void tfGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfGenderActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfGenderActionPerformed
-
-    private void tfNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfNameKeyPressed
-        // TODO add your handling code here:
         char c = evt.getKeyChar();
-        if(Character.isLetter(c)||Character.isWhitespace(c)||Character.isISOControl(c))
+        if(Character.isLetterOrDigit(c) || Character.isISOControl(c) || Character.isWhitespace(c) )
         {
-            tfName.setEditable(true);  
-        }
-        else
-        {
-            tfName.setEditable(false);
-            JOptionPane.showMessageDialog(this, "Please enter character");
-        }
-    }//GEN-LAST:event_tfNameKeyPressed
-
-    private void tfIDKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfIDKeyPressed
-        // TODO add your handling code here:
-        char c = evt.getKeyChar();
-        if(Character.isWhitespace(c)||Character.isISOControl(c)||Character.isLetterOrDigit(c))
-        {
-            tfID.setEditable(true);  
-        }
-        else
-        {
-            tfID.setEditable(false);
-            JOptionPane.showMessageDialog(this, "No special characters allowed!");
-        }
-    }//GEN-LAST:event_tfIDKeyPressed
-
-    private void tfGenderKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfGenderKeyPressed
-        // TODO add your handling code here:
-        char c = evt.getKeyChar();
-        if(Character.isLetter(c))
-        {
-            if(c == 'M' ||c == 'F' || c == 'O' || c == 'm' ||c == 'f' || c == 'o')
+            if (c == '@' || c== '.' || Character.isLetterOrDigit(c))
             {
-                tfGender.setEditable(true);
+                tfEmail.setEditable(true);
             }
-           else
+            else
             {
-                tfGender.setEditable(false);
-            JOptionPane.showMessageDialog(this, "Enter M for Male, F for Female, O for Other");
+                tfEmail.setEditable(false);
+                JOptionPane.showMessageDialog(this, "enter valid email address");
             }
         }
-    }//GEN-LAST:event_tfGenderKeyPressed
-
-    private void tfJoiningDateKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfJoiningDateKeyPressed
-        // TODO add your handling code here:
-        char c = evt.getKeyChar();
-        if(Character.isWhitespace(c)||Character.isLetterOrDigit(c)||Character.isISOControl(c)||Character.isWhitespace(c))
-        {
-            tfJoiningDate.setEditable(true);  
-        }
-        else
-        {
-            tfJoiningDate.setEditable(false);
-            JOptionPane.showMessageDialog(this, "No special characters allowed!");
-        }
-    }//GEN-LAST:event_tfJoiningDateKeyPressed
-
-    private void tfLevelKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfLevelKeyPressed
-        // TODO add your handling code here:
-        char c = evt.getKeyChar();
-        if(Character.isWhitespace(c)||Character.isLetterOrDigit(c))
-        {
-            tfLevel.setEditable(true);  
-        }
-        else
-        {
-            tfLevel.setEditable(false);
-            JOptionPane.showMessageDialog(this, "No special characters allowed!");
-        }
-    }//GEN-LAST:event_tfLevelKeyPressed
-
-    private void tfTeamKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfTeamKeyPressed
-        // TODO add your handling code here:
-        char c = evt.getKeyChar();
-        if(Character.isLetter(c)||Character.isWhitespace(c))
-        {
-            tfTeam.setEditable(true);  
-        }
-        else
-        {
-            tfTeam.setEditable(false);
-            JOptionPane.showMessageDialog(this, "Numbers and special characters not allowed");
-        }
-    }//GEN-LAST:event_tfTeamKeyPressed
-
-    private void tfPositionKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfPositionKeyPressed
-        // TODO add your handling code here:
-        char c = evt.getKeyChar();
-        if(Character.isLetter(c)||Character.isWhitespace(c))
-        {
-            tfPosition.setEditable(true);  
-        }
-        else
-        {
-            tfPosition.setEditable(false);
-            JOptionPane.showMessageDialog(this, "Enter in words");
-        }
-    }//GEN-LAST:event_tfPositionKeyPressed
+    }//GEN-LAST:event_tfEmailKeyPressed
 
     private void tfPhoneNoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfPhoneNoKeyPressed
         // TODO add your handling code here:
         char c = evt.getKeyChar();
-        if(Character.isDigit(c)||Character.isWhitespace(c))
+        if(Character.isDigit(c)||Character.isWhitespace(c) || Character.isISOControl(c) )
         {
-            tfPhoneNo.setEditable(true); 
+            tfPhoneNo.setEditable(true);
         }
         else
         {
@@ -571,31 +514,77 @@ public class CreateJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_tfPhoneNoKeyPressed
 
-    private void tfEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfEmailKeyPressed
+    private void tfPhoneNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPhoneNoActionPerformed
         // TODO add your handling code here:
-        
-         char c = evt.getKeyChar();
-        if(Character.isLetterOrDigit(c) || Character.isISOControl(c) || Character.isWhitespace(c) )
-            {
-                if (c == '@' || c== '.' || Character.isLetterOrDigit(c))
-                {
-                    tfEmail.setEditable(true);
-                }
-                else
-                {
-                    tfEmail.setEditable(false);
-                    JOptionPane.showMessageDialog(this, "enter valid email address");
-                }
-            }
-    }//GEN-LAST:event_tfEmailKeyPressed
+    }//GEN-LAST:event_tfPhoneNoActionPerformed
+
+    private void tfPositionKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfPositionKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isLetter(c)||Character.isWhitespace(c)|| Character.isISOControl(c) )
+        {
+            tfPosition.setEditable(true);
+        }
+        else
+        {
+            tfPosition.setEditable(false);
+            JOptionPane.showMessageDialog(this, "Enter in words");
+        }
+    }//GEN-LAST:event_tfPositionKeyPressed
+
+    private void tfTeamKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfTeamKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isLetter(c)||Character.isWhitespace(c) || Character.isISOControl(c) )
+        {
+            tfTeam.setEditable(true);
+        }
+        else
+        {
+            tfTeam.setEditable(false);
+            JOptionPane.showMessageDialog(this, "Numbers and special characters not allowed");
+        }
+    }//GEN-LAST:event_tfTeamKeyPressed
+
+    private void tfLevelKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfLevelKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isWhitespace(c)||Character.isLetterOrDigit(c) || Character.isISOControl(c) )
+        {
+            tfLevel.setEditable(true);
+        }
+        else
+        {
+            tfLevel.setEditable(false);
+            JOptionPane.showMessageDialog(this, "No special characters allowed!");
+        }
+    }//GEN-LAST:event_tfLevelKeyPressed
+
+    private void tfJoiningDateKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfJoiningDateKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isWhitespace(c)||Character.isLetterOrDigit(c)||Character.isISOControl(c)||Character.isWhitespace(c))
+        {
+            tfJoiningDate.setEditable(true);
+        }
+        else
+        {
+            tfJoiningDate.setEditable(false);
+            JOptionPane.showMessageDialog(this, "No special characters allowed!");
+        }
+    }//GEN-LAST:event_tfJoiningDateKeyPressed
+
+    private void tfJoiningDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfJoiningDateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfJoiningDateActionPerformed
 
     private void tfAgeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfAgeKeyPressed
         // TODO add your handling code here:
         char c = evt.getKeyChar();
-        if(Character.isDigit(c)||Character.isWhitespace(c))
-        {   
-            
-            tfAge.setEditable(true);  
+        if(Character.isDigit(c)||Character.isWhitespace(c)|| Character.isISOControl(c) )
+        {
+
+            tfAge.setEditable(true);
         }
         else
         {
@@ -604,21 +593,41 @@ public class CreateJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_tfAgeKeyPressed
 
+    private void tfAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAgeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfAgeActionPerformed
+
+    private void tfIDKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfIDKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isWhitespace(c)||Character.isISOControl(c)||Character.isLetterOrDigit(c))
+        {
+            tfID.setEditable(true);
+        }
+        else
+        {
+            tfID.setEditable(false);
+            JOptionPane.showMessageDialog(this, "No special characters allowed!");
+        }
+    }//GEN-LAST:event_tfIDKeyPressed
+
+    private void tfNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfNameKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isLetter(c)||Character.isWhitespace(c)||Character.isISOControl(c))
+        {
+            tfName.setEditable(true);
+        }
+        else
+        {
+            tfName.setEditable(false);
+            JOptionPane.showMessageDialog(this, "Please enter character");
+        }
+    }//GEN-LAST:event_tfNameKeyPressed
+
     private void tfNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfNameActionPerformed
-
-    private void btnImageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImageActionPerformed
-        // TODO add your handling code here:
-        JFileChooser chooser = new JFileChooser();
-        chooser.showOpenDialog(null);
-        File f = chooser.getSelectedFile();
-        String filename = f.getAbsolutePath();
-        Image getAbsolutePath = null;
-        ImageIcon icon = new ImageIcon(filename);
-        Image image = icon.getImage().getScaledInstance(imageURL.getWidth(), imageURL.getHeight(), Image.SCALE_SMOOTH);
-        imageURL.setIcon(icon);
-    }//GEN-LAST:event_btnImageActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -645,6 +654,7 @@ public class CreateJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField tfEmail;
     private javax.swing.JTextField tfGender;
     private javax.swing.JTextField tfID;
+    private javax.swing.JTextField tfImagePath;
     private javax.swing.JTextField tfJoiningDate;
     private javax.swing.JTextField tfLevel;
     private javax.swing.JTextField tfName;
