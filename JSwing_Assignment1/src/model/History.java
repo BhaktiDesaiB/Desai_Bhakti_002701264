@@ -12,8 +12,6 @@ import java.util.ArrayList;
  */
 public class History 
 {
-    String filename = null;
-    byte[] person_image = null;
     
     private ArrayList<Employee> history;
     

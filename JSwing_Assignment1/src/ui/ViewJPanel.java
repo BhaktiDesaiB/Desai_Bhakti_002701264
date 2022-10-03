@@ -67,16 +67,21 @@ public class ViewJPanel extends javax.swing.JPanel {
         tfEmail = new javax.swing.JTextField();
         tfGender = new javax.swing.JTextField();
         deleteButton = new javax.swing.JButton();
+        viewPhoto = new javax.swing.JLabel();
+        viewImage = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(255, 226, 225));
+        setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         detailsTitle.setBackground(new java.awt.Color(200, 242, 200));
-        detailsTitle.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        detailsTitle.setFont(new java.awt.Font("Corbel Light", 3, 24)); // NOI18N
         detailsTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         detailsTitle.setText("View Employee Details");
 
         empTable.setAutoCreateRowSorter(true);
-        empTable.setBackground(new java.awt.Color(200, 255, 200));
+        empTable.setBackground(new java.awt.Color(255, 230, 250));
         empTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        empTable.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        empTable.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         empTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -86,7 +91,7 @@ public class ViewJPanel extends javax.swing.JPanel {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Long.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false, false, false, false, false
@@ -102,6 +107,8 @@ public class ViewJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(empTable);
 
+        viewButton.setBackground(new java.awt.Color(255, 204, 255));
+        viewButton.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         viewButton.setText("View");
         viewButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,12 +116,17 @@ public class ViewJPanel extends javax.swing.JPanel {
             }
         });
 
+        updateButton.setBackground(new java.awt.Color(255, 204, 255));
+        updateButton.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         updateButton.setText("Update");
         updateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateButtonActionPerformed(evt);
             }
         });
+
+        detailsJPanel.setBackground(new java.awt.Color(255, 238, 242));
+        detailsJPanel.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
 
         employeeName.setText("Employee Name :");
 
@@ -199,7 +211,7 @@ public class ViewJPanel extends javax.swing.JPanel {
                             .addComponent(tfPosition, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tfPhoneNo, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tfEmail, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfGender, javax.swing.GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE))
+                            .addComponent(tfGender, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE))
                         .addGap(124, 124, 124))))
         );
         detailsJPanelLayout.setVerticalGroup(
@@ -249,9 +261,11 @@ public class ViewJPanel extends javax.swing.JPanel {
                     .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(photo)
-                .addContainerGap(149, Short.MAX_VALUE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
+        deleteButton.setBackground(new java.awt.Color(255, 204, 255));
+        deleteButton.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         deleteButton.setText("Delete");
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -259,46 +273,52 @@ public class ViewJPanel extends javax.swing.JPanel {
             }
         });
 
+        viewPhoto.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        viewPhoto.setText("Photo :");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(detailsTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(detailsTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 817, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(viewButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(updateButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(deleteButton)
-                        .addGap(13, 13, 13))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 61, Short.MAX_VALUE)
-                .addComponent(detailsJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 805, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(564, 564, 564)
+                .addComponent(viewButton)
+                .addGap(12, 12, 12)
+                .addComponent(updateButton)
+                .addGap(12, 12, 12)
+                .addComponent(deleteButton))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(detailsJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addComponent(viewPhoto)
+                .addGap(12, 12, 12)
+                .addComponent(viewImage, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {updateButton, viewButton});
-
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(13, 13, 13)
                 .addComponent(detailsTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(viewButton)
                     .addComponent(updateButton)
                     .addComponent(deleteButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(detailsJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(detailsJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(viewPhoto)
+                            .addComponent(viewImage, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -427,6 +447,8 @@ public class ViewJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField tfTeam;
     private javax.swing.JButton updateButton;
     private javax.swing.JButton viewButton;
+    private javax.swing.JLabel viewImage;
+    private javax.swing.JLabel viewPhoto;
     // End of variables declaration//GEN-END:variables
 
     private void employeeDetailsTable() 

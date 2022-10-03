@@ -56,7 +56,6 @@ public class CreateJPanel extends javax.swing.JPanel {
         contactInfo = new javax.swing.JLabel();
         phoneNo = new javax.swing.JLabel();
         emailID = new javax.swing.JLabel();
-        photo = new javax.swing.JLabel();
         tfName = new javax.swing.JTextField();
         tfID = new javax.swing.JTextField();
         tfAge = new javax.swing.JTextField();
@@ -69,10 +68,16 @@ public class CreateJPanel extends javax.swing.JPanel {
         create = new javax.swing.JButton();
         reset = new javax.swing.JButton();
         tfGender = new javax.swing.JTextField();
-        img = new javax.swing.JLabel();
-        ImageButton = new javax.swing.JButton();
+        photo = new javax.swing.JLabel();
+        imageURL = new javax.swing.JLabel();
+        btnImage = new javax.swing.JButton();
 
-        createTitle.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        setBackground(new java.awt.Color(253, 227, 222));
+
+        titleJPanel.setBackground(new java.awt.Color(255, 228, 232));
+
+        createTitle.setBackground(new java.awt.Color(255, 222, 205));
+        createTitle.setFont(new java.awt.Font("Corbel Light", 3, 24)); // NOI18N
         createTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         createTitle.setText("New Employee");
         createTitle.setToolTipText("");
@@ -81,7 +86,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         titleJPanel.setLayout(titleJPanelLayout);
         titleJPanelLayout.setHorizontalGroup(
             titleJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(createTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(createTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 836, Short.MAX_VALUE)
         );
         titleJPanelLayout.setVerticalGroup(
             titleJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,6 +95,9 @@ public class CreateJPanel extends javax.swing.JPanel {
                 .addComponent(createTitle)
                 .addContainerGap(8, Short.MAX_VALUE))
         );
+
+        detailsJPanel.setBackground(new java.awt.Color(255, 218, 255));
+        detailsJPanel.setFont(new java.awt.Font("Microsoft JhengHei Light", 0, 12)); // NOI18N
 
         employeeName.setText("Employee Name :");
 
@@ -112,8 +120,6 @@ public class CreateJPanel extends javax.swing.JPanel {
         phoneNo.setText("phone no. : ");
 
         emailID.setText("email-id : ");
-
-        photo.setText("photo :");
 
         tfName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,6 +195,8 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         });
 
+        create.setBackground(new java.awt.Color(255, 226, 201));
+        create.setFont(new java.awt.Font("Microsoft JhengHei Light", 0, 12)); // NOI18N
         create.setText("Create");
         create.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -196,6 +204,8 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         });
 
+        reset.setBackground(new java.awt.Color(255, 226, 201));
+        reset.setFont(new java.awt.Font("Microsoft JhengHei Light", 0, 12)); // NOI18N
         reset.setText("Reset");
         reset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -214,79 +224,61 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         });
 
-        ImageButton.setText("Choose");
-        ImageButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ImageButtonMouseClicked(evt);
-            }
-        });
-        ImageButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ImageButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout detailsJPanelLayout = new javax.swing.GroupLayout(detailsJPanel);
         detailsJPanel.setLayout(detailsJPanelLayout);
         detailsJPanelLayout.setHorizontalGroup(
             detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(detailsJPanelLayout.createSequentialGroup()
-                .addGap(55, 55, 55)
                 .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(emailID, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(phoneNo, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(position, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(teamInfo, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(level, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(joiningDate, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(age, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(detailsJPanelLayout.createSequentialGroup()
-                            .addComponent(employeeName)
-                            .addGap(120, 120, 120)))
                     .addGroup(detailsJPanelLayout.createSequentialGroup()
+                        .addGap(55, 55, 55)
                         .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(employeeID)
-                                .addComponent(gender)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, detailsJPanelLayout.createSequentialGroup()
-                                    .addGap(38, 38, 38)
-                                    .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(contactInfo, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(create, javax.swing.GroupLayout.Alignment.TRAILING))))
-                            .addComponent(photo))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(detailsJPanelLayout.createSequentialGroup()
-                        .addComponent(reset)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, detailsJPanelLayout.createSequentialGroup()
-                        .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(img, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(emailID, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(phoneNo, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(position, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(teamInfo, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(level, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(joiningDate, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(age, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(detailsJPanelLayout.createSequentialGroup()
+                                    .addComponent(employeeName)
+                                    .addGap(120, 120, 120)))
                             .addGroup(detailsJPanelLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(tfGender, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                                    .addComponent(tfJoiningDate, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                                    .addComponent(tfAge, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                                    .addComponent(tfID, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                                    .addComponent(tfName, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                                    .addComponent(tfLevel, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                                    .addComponent(tfTeam, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                                    .addComponent(tfPosition, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                                    .addComponent(tfPhoneNo, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                                    .addComponent(tfEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ImageButton)
-                        .addGap(43, 43, 43))))
+                                .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(employeeID)
+                                    .addComponent(gender)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, detailsJPanelLayout.createSequentialGroup()
+                                        .addGap(38, 38, 38)
+                                        .addComponent(contactInfo)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGap(0, 58, Short.MAX_VALUE)
+                        .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tfGender, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                            .addComponent(tfJoiningDate, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                            .addComponent(tfAge, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                            .addComponent(tfID, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                            .addComponent(tfName, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                            .addComponent(tfLevel, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                            .addComponent(tfTeam, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                            .addComponent(tfPosition, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                            .addComponent(tfPhoneNo, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                            .addComponent(tfEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)))
+                    .addGroup(detailsJPanelLayout.createSequentialGroup()
+                        .addGap(126, 126, 126)
+                        .addComponent(create)
+                        .addGap(48, 48, 48)
+                        .addComponent(reset)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(29, 29, 29))
         );
 
-        detailsJPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {img, tfAge, tfEmail, tfGender, tfID, tfJoiningDate, tfLevel, tfName, tfPhoneNo, tfPosition, tfTeam});
+        detailsJPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {tfAge, tfEmail, tfGender, tfID, tfJoiningDate, tfLevel, tfName, tfPhoneNo, tfPosition, tfTeam});
 
         detailsJPanelLayout.setVerticalGroup(
             detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(detailsJPanelLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addGap(54, 54, 54)
                 .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(employeeName)
                     .addComponent(tfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -320,49 +312,72 @@ public class CreateJPanel extends javax.swing.JPanel {
                     .addComponent(tfPosition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(contactInfo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(phoneNo)
-                    .addComponent(tfPhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(emailID)
-                    .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(detailsJPanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(photo)
-                            .addComponent(img, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(phoneNo)
+                            .addComponent(tfPhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(emailID)
+                            .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, detailsJPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ImageButton)
-                        .addGap(55, 55, 55)))
-                .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(create)
-                    .addComponent(reset))
-                .addGap(25, 25, 25))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
+                        .addGroup(detailsJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(reset)
+                            .addComponent(create))
+                        .addGap(97, 97, 97))))
         );
+
+        photo.setFont(new java.awt.Font("Microsoft JhengHei Light", 0, 12)); // NOI18N
+        photo.setText("Photo:");
+
+        btnImage.setBackground(new java.awt.Color(255, 226, 201));
+        btnImage.setFont(new java.awt.Font("Microsoft JhengHei Light", 0, 12)); // NOI18N
+        btnImage.setText("Choose File");
+        btnImage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImageActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(titleJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(detailsJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(detailsJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(photo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnImage))
+                    .addComponent(imageURL, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(titleJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(detailsJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(detailsJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(photo)
+                            .addComponent(btnImage))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(imageURL, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -396,8 +411,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         long phoneNo = Long.parseLong(tfPhoneNo.getText());
         String emailID = tfEmail.getText();
         
-        byte[]image;
-
+        
         Employee emp = history.addNewEmployee();
 
         emp.setEmployeeName(name);
@@ -594,37 +608,22 @@ public class CreateJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfNameActionPerformed
 
-    private void ImageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImageButtonActionPerformed
+    private void btnImageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImageActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ImageButtonActionPerformed
-
-    private void ImageButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImageButtonMouseClicked
-        // TODO add your handling code here:
-//       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-        
-    }//GEN-LAST:event_ImageButtonMouseClicked
+        JFileChooser chooser = new JFileChooser();
+        chooser.showOpenDialog(null);
+        File f = chooser.getSelectedFile();
+        String filename = f.getAbsolutePath();
+        Image getAbsolutePath = null;
+        ImageIcon icon = new ImageIcon(filename);
+        Image image = icon.getImage().getScaledInstance(imageURL.getWidth(), imageURL.getHeight(), Image.SCALE_SMOOTH);
+        imageURL.setIcon(icon);
+    }//GEN-LAST:event_btnImageActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ImageButton;
     private javax.swing.JLabel age;
+    private javax.swing.JButton btnImage;
     private javax.swing.JLabel contactInfo;
     private javax.swing.JButton create;
     private javax.swing.JLabel createTitle;
@@ -634,7 +633,7 @@ public class CreateJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel employeeName;
     private javax.swing.JLabel gender;
     private javax.swing.ButtonGroup genderButtonGroup;
-    private javax.swing.JLabel img;
+    private javax.swing.JLabel imageURL;
     private javax.swing.JLabel joiningDate;
     private javax.swing.JLabel level;
     private javax.swing.JLabel phoneNo;

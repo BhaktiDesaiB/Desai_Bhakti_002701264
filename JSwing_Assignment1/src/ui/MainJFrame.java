@@ -40,10 +40,14 @@ public class MainJFrame extends javax.swing.JFrame {
         createButton = new javax.swing.JButton();
         searchButton = new javax.swing.JButton();
         detailsPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        title = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        createButton.setBackground(new java.awt.Color(200, 255, 200));
+        controlPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        createButton.setBackground(new java.awt.Color(252, 201, 230));
         createButton.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         createButton.setText("Create new Employee");
         createButton.addActionListener(new java.awt.event.ActionListener() {
@@ -51,8 +55,9 @@ public class MainJFrame extends javax.swing.JFrame {
                 createButtonActionPerformed(evt);
             }
         });
+        controlPanel.add(createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, -1, -1));
 
-        searchButton.setBackground(new java.awt.Color(200, 255, 200));
+        searchButton.setBackground(new java.awt.Color(252, 201, 230));
         searchButton.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         searchButton.setText("View Employees");
         searchButton.addActionListener(new java.awt.event.ActionListener() {
@@ -60,45 +65,24 @@ public class MainJFrame extends javax.swing.JFrame {
                 searchButtonActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
-        controlPanel.setLayout(controlPanelLayout);
-        controlPanelLayout.setHorizontalGroup(
-            controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(controlPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(createButton)
-                    .addComponent(searchButton))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        controlPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {createButton, searchButton});
-
-        controlPanelLayout.setVerticalGroup(
-            controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(controlPanelLayout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addComponent(createButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(searchButton)
-                .addContainerGap(674, Short.MAX_VALUE))
-        );
-
-        controlPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {createButton, searchButton});
+        controlPanel.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 229, -1));
 
         splitPane.setLeftComponent(controlPanel);
 
-        javax.swing.GroupLayout detailsPanelLayout = new javax.swing.GroupLayout(detailsPanel);
-        detailsPanel.setLayout(detailsPanelLayout);
-        detailsPanelLayout.setHorizontalGroup(
-            detailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 695, Short.MAX_VALUE)
-        );
-        detailsPanelLayout.setVerticalGroup(
-            detailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 822, Short.MAX_VALUE)
-        );
+        detailsPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setBackground(new java.awt.Color(255, 204, 204));
+        jLabel1.setFont(new java.awt.Font("MS UI Gothic", 0, 24)); // NOI18N
+        detailsPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
+
+        title.setBackground(new java.awt.Color(255, 204, 255));
+        title.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        title.setText("Human Resource Employee Portal");
+        title.setToolTipText("");
+        title.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        title.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        detailsPanel.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 430, 50));
 
         splitPane.setRightComponent(detailsPanel);
 
@@ -106,11 +90,11 @@ public class MainJFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(splitPane)
+            .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 833, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(splitPane)
+            .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 493, Short.MAX_VALUE)
         );
 
         pack();
@@ -167,7 +151,9 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel controlPanel;
     private javax.swing.JButton createButton;
     private javax.swing.JPanel detailsPanel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton searchButton;
     private javax.swing.JSplitPane splitPane;
+    private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }
