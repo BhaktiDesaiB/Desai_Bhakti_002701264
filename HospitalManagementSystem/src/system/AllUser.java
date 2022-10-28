@@ -39,7 +39,7 @@ public class AllUser extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        goBackButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 255, 204));
@@ -49,7 +49,7 @@ public class AllUser extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(0, 102, 102));
         jLabel20.setText("Hospital Details");
-        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
+        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, -1, -1));
 
         jTable1.setBackground(new java.awt.Color(204, 255, 204));
         jTable1.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
@@ -78,19 +78,19 @@ public class AllUser extends javax.swing.JFrame {
         jTable1.setMaximumSize(new java.awt.Dimension(12, 64));
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 770, 70));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 770, 70));
 
         jLabel21.setBackground(new java.awt.Color(204, 255, 204));
         jLabel21.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(0, 102, 102));
         jLabel21.setText("Community Details");
-        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
+        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 40, -1, -1));
 
         jLabel22.setBackground(new java.awt.Color(204, 255, 204));
         jLabel22.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(0, 102, 102));
         jLabel22.setText("Patient Details");
-        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
+        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, -1, -1));
 
         jTable2.setBackground(new java.awt.Color(204, 255, 204));
         jTable2.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
@@ -118,7 +118,7 @@ public class AllUser extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jTable2);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 770, 90));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 770, 90));
 
         jTable3.setBackground(new java.awt.Color(204, 255, 204));
         jTable3.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
@@ -148,13 +148,13 @@ public class AllUser extends javax.swing.JFrame {
         jTable3.setMaximumSize(new java.awt.Dimension(12, 64));
         jScrollPane3.setViewportView(jTable3);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 770, 90));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 770, 90));
 
         jLabel23.setBackground(new java.awt.Color(204, 255, 204));
         jLabel23.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(0, 102, 102));
         jLabel23.setText("Doctor Details");
-        getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, -1));
+        getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 410, -1, -1));
 
         jTable4.setBackground(new java.awt.Color(204, 255, 204));
         jTable4.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
@@ -180,16 +180,29 @@ public class AllUser extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(jTable4);
 
-        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 770, 80));
+        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 770, 80));
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 102, 102));
-        jButton1.setText("Go Back");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 500, -1, -1));
+        goBackButton.setBackground(new java.awt.Color(204, 255, 204));
+        goBackButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        goBackButton.setForeground(new java.awt.Color(0, 102, 102));
+        goBackButton.setText("Go Back");
+        goBackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                goBackButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(goBackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void goBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goBackButtonActionPerformed
+        // TODO add your handling code here:
+        //goes back to main frame
+        MainFrame mains = new MainFrame();
+        mains.setVisible(true);
+    }//GEN-LAST:event_goBackButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -227,7 +240,7 @@ public class AllUser extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton goBackButton;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -241,4 +254,4 @@ public class AllUser extends javax.swing.JFrame {
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     // End of variables declaration//GEN-END:variables
-}
+
