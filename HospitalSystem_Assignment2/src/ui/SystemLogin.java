@@ -176,8 +176,6 @@ public class SystemLogin extends javax.swing.JPanel {
         if(username.equals("sys") || password.equals("sys"))
         {
             JOptionPane.showMessageDialog(null, "login successful");
-            SystemAdminFrame systemAdmin = new SystemAdminFrame();
-            systemAdmin.setVisible(true);
         }
         else
         {

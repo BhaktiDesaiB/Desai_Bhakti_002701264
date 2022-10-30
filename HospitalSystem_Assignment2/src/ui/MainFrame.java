@@ -26,8 +26,7 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        headPanel = new javax.swing.JPanel();
-        headingLabel = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         splitPane = new javax.swing.JSplitPane();
         detailsPanel = new javax.swing.JPanel();
         buttonPanel = new javax.swing.JPanel();
@@ -36,27 +35,10 @@ public class MainFrame extends javax.swing.JFrame {
         communityLoginButton = new javax.swing.JButton();
         systemLoginButton = new javax.swing.JButton();
         hospitalLoginButton = new javax.swing.JButton();
+        headPanel = new javax.swing.JPanel();
+        headingLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        headingLabel.setFont(new java.awt.Font("Times New Roman", 3, 36)); // NOI18N
-        headingLabel.setForeground(new java.awt.Color(0, 102, 102));
-        headingLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        headingLabel.setText("HOSPITAL MANAGEMENT SYSTEM");
-
-        javax.swing.GroupLayout headPanelLayout = new javax.swing.GroupLayout(headPanel);
-        headPanel.setLayout(headPanelLayout);
-        headPanelLayout.setHorizontalGroup(
-            headPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(headingLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        headPanelLayout.setVerticalGroup(
-            headPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(headingLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
-                .addContainerGap())
-        );
 
         splitPane.setBackground(new java.awt.Color(204, 204, 255));
         splitPane.setBorder(null);
@@ -71,11 +53,11 @@ public class MainFrame extends javax.swing.JFrame {
         detailsPanel.setLayout(detailsPanelLayout);
         detailsPanelLayout.setHorizontalGroup(
             detailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGap(0, 717, Short.MAX_VALUE)
         );
         detailsPanelLayout.setVerticalGroup(
             detailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 431, Short.MAX_VALUE)
+            .addGap(0, 571, Short.MAX_VALUE)
         );
 
         splitPane.setRightComponent(detailsPanel);
@@ -163,52 +145,78 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(communityLoginButton)
                 .addGap(18, 18, 18)
                 .addComponent(systemLoginButton)
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addContainerGap(241, Short.MAX_VALUE))
         );
 
         buttonPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {communityLoginButton, doctorLoginButton, hospitalLoginButton, patientLoginButton, systemLoginButton});
 
         splitPane.setLeftComponent(buttonPanel);
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(splitPane)
+                    .addContainerGap()))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 593, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(splitPane)
+                    .addContainerGap()))
+        );
+
+        headingLabel.setFont(new java.awt.Font("Times New Roman", 3, 36)); // NOI18N
+        headingLabel.setForeground(new java.awt.Color(0, 102, 102));
+        headingLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        headingLabel.setText("HOSPITAL MANAGEMENT SYSTEM");
+
+        javax.swing.GroupLayout headPanelLayout = new javax.swing.GroupLayout(headPanel);
+        headPanel.setLayout(headPanelLayout);
+        headPanelLayout.setHorizontalGroup(
+            headPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(headingLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 937, Short.MAX_VALUE)
+        );
+        headPanelLayout.setVerticalGroup(
+            headPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(headingLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(headPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(splitPane)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(headPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(splitPane))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void patientLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientLoginButtonActionPerformed
+    private void hospitalLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hospitalLoginButtonActionPerformed
         // TODO add your handling code here:
-        PatientLogin newPatient = new PatientLogin();
-        newPatient.setVisible(true);
-        splitPane.setRightComponent(newPatient);
-    }//GEN-LAST:event_patientLoginButtonActionPerformed
-
-    private void doctorLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctorLoginButtonActionPerformed
-        // TODO add your handling code here:
-        DoctorLogin newDoctor = new DoctorLogin();
-        newDoctor.setVisible(true);
-        splitPane.setRightComponent(newDoctor);
-    }//GEN-LAST:event_doctorLoginButtonActionPerformed
-
-    private void communityLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_communityLoginButtonActionPerformed
-        // TODO add your handling code here:
-        CommunityLogin newCommunity = new CommunityLogin();
-        newCommunity.setVisible(true);
-        splitPane.setRightComponent(newCommunity);
-    }//GEN-LAST:event_communityLoginButtonActionPerformed
+        HospitalLogin newHospital = new HospitalLogin();
+        newHospital.setVisible(true);
+        splitPane.setRightComponent(newHospital);
+    }//GEN-LAST:event_hospitalLoginButtonActionPerformed
 
     private void systemLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_systemLoginButtonActionPerformed
         // TODO add your handling code here:
@@ -217,12 +225,26 @@ public class MainFrame extends javax.swing.JFrame {
         splitPane.setRightComponent(systemAdmin);
     }//GEN-LAST:event_systemLoginButtonActionPerformed
 
-    private void hospitalLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hospitalLoginButtonActionPerformed
+    private void communityLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_communityLoginButtonActionPerformed
         // TODO add your handling code here:
-         HospitalLogin newHospital = new HospitalLogin();
-        newHospital.setVisible(true);
-        splitPane.setRightComponent(newHospital);
-    }//GEN-LAST:event_hospitalLoginButtonActionPerformed
+        CommunityLogin newCommunity = new CommunityLogin();
+        newCommunity.setVisible(true);
+        splitPane.setRightComponent(newCommunity);
+    }//GEN-LAST:event_communityLoginButtonActionPerformed
+
+    private void doctorLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctorLoginButtonActionPerformed
+        // TODO add your handling code here:
+        DoctorLogin newDoctor = new DoctorLogin();
+        newDoctor.setVisible(true);
+        splitPane.setRightComponent(newDoctor);
+    }//GEN-LAST:event_doctorLoginButtonActionPerformed
+
+    private void patientLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientLoginButtonActionPerformed
+        // TODO add your handling code here:
+        PatientLogin newPatient = new PatientLogin();
+        newPatient.setVisible(true);
+        splitPane.setRightComponent(newPatient);
+    }//GEN-LAST:event_patientLoginButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -266,6 +288,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel headPanel;
     private javax.swing.JLabel headingLabel;
     private javax.swing.JButton hospitalLoginButton;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton patientLoginButton;
     private javax.swing.JSplitPane splitPane;
     private javax.swing.JButton systemLoginButton;

@@ -11,13 +11,11 @@ import java.util.Date;
  * @author bhakti
  */
 public class VitalSign 
-{
+{ 
     private double temperature;
     private double bloodPressure;
     private int pulse;
     private Date date;
-    private int id;
-    private String fullName;
 
     public double getTemperature() {
         return temperature;
@@ -50,21 +48,5 @@ public class VitalSign
     public void setDate(Date date) {
         this.date = date;
     }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-    
+   
 }
