@@ -12,32 +12,35 @@ import java.util.Date;
  */
 public class Patient 
 {
-    private int patientId;
+    //private int patientId;
     private String patientName;
-    private Date patientDateOfbirth;
-    private char patientGender;
+    private  String patientDateOfbirth;
+    private String patientGender;
     private long patientContact;
     private String patientEmail;
     private String patientAddress;
     private String patientCity; 
-    private short patientPincode;
+    private int patientPincode;
     private String patientDoctorName;
     private String patientHospitalName;
+    
+    private String userName;
+    private String password;
 
-    public String getPatientDoctorName() {
-        return patientDoctorName;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setPatientDoctorName(String patientDoctorName) {
-        this.patientDoctorName = patientDoctorName;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public int getPatientId() {
-        return patientId;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPatientId(int patientId) {
-        this.patientId = patientId;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getPatientName() {
@@ -48,19 +51,11 @@ public class Patient
         this.patientName = patientName;
     }
 
-    public Date getPatientDateOfbirth() {
-        return patientDateOfbirth;
-    }
-
-    public void setPatientDateOfbirth(Date patientDateOfbirth) {
-        this.patientDateOfbirth = patientDateOfbirth;
-    }
-
-    public char getPatientGender() {
+    public String getPatientGender() {
         return patientGender;
     }
 
-    public void setPatientGender(char patientGender) {
+    public void setPatientGender(String patientGender) {
         this.patientGender = patientGender;
     }
 
@@ -96,12 +91,20 @@ public class Patient
         this.patientCity = patientCity;
     }
 
-    public short getPatientPincode() {
+    public int getPatientPincode() {
         return patientPincode;
     }
 
-    public void setPatientPincode(short patientPincode) {
+    public void setPatientPincode(int patientPincode) {
         this.patientPincode = patientPincode;
+    }
+    
+    public String getPatientDoctorName() {
+        return patientDoctorName;
+    }
+
+    public void setPatientDoctorName(String patientDoctorName) {
+        this.patientDoctorName = patientDoctorName;
     }
 
     public String getPatientHospitalName() {
@@ -111,6 +114,12 @@ public class Patient
     public void setPatientHospitalName(String patientHospitalName) {
         this.patientHospitalName = patientHospitalName;
     }
- 
-    
+
+    public String getPatientDateOfbirth() {
+        return patientDateOfbirth;
+    }
+
+    public void setPatientDateOfbirth(String patientDateOfbirth) {
+        this.patientDateOfbirth = patientDateOfbirth;
+    }
 }

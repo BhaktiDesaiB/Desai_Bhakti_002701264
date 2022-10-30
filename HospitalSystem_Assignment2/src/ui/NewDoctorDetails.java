@@ -4,17 +4,24 @@
  */
 package ui;
 
+import javax.swing.JOptionPane;
+import model.Doctor;
+import model.DoctorDirectory;
+
 /**
  *
- * @author nisha
+ * @author bhakti
  */
 public class NewDoctorDetails extends javax.swing.JPanel {
 
     /**
      * Creates new form NewDoctorDetails
      */
+    
+    DoctorDirectory doctorDirectory;
     public NewDoctorDetails() {
         initComponents();
+        this.doctorDirectory  = doctorDirectory;
     }
 
     /**
@@ -28,23 +35,23 @@ public class NewDoctorDetails extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        txtDoctorName = new javax.swing.JTextField();
+        txtDoctorPincode = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        txtDoctorAddress = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        txtDoctorCity = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        txtDoctorContact = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        txtDoctorEmail = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jTextField8 = new javax.swing.JTextField();
+        txtDoctorCommunity = new javax.swing.JTextField();
+        SignUpButton = new javax.swing.JButton();
+        txtPassword = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
+        txtUserName = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
 
@@ -56,23 +63,23 @@ public class NewDoctorDetails extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(0, 102, 102));
         jLabel1.setText("Doctor Name :");
 
-        jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 102, 102));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtDoctorName.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtDoctorName.setForeground(new java.awt.Color(0, 102, 102));
+        txtDoctorName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtDoctorNameActionPerformed(evt);
             }
         });
 
-        jTextField2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(0, 102, 102));
+        txtDoctorPincode.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtDoctorPincode.setForeground(new java.awt.Color(0, 102, 102));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 102, 102));
         jLabel2.setText("Pincode :");
 
-        jTextField3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(0, 102, 102));
+        txtDoctorAddress.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtDoctorAddress.setForeground(new java.awt.Color(0, 102, 102));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 102, 102));
@@ -82,11 +89,11 @@ public class NewDoctorDetails extends javax.swing.JPanel {
         jLabel4.setForeground(new java.awt.Color(0, 102, 102));
         jLabel4.setText("City :");
 
-        jTextField4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(0, 102, 102));
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        txtDoctorCity.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtDoctorCity.setForeground(new java.awt.Color(0, 102, 102));
+        txtDoctorCity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                txtDoctorCityActionPerformed(evt);
             }
         });
 
@@ -94,11 +101,11 @@ public class NewDoctorDetails extends javax.swing.JPanel {
         jLabel5.setForeground(new java.awt.Color(0, 102, 102));
         jLabel5.setText("Contact no. :");
 
-        jTextField5.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jTextField5.setForeground(new java.awt.Color(0, 102, 102));
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        txtDoctorContact.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtDoctorContact.setForeground(new java.awt.Color(0, 102, 102));
+        txtDoctorContact.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                txtDoctorContactActionPerformed(evt);
             }
         });
 
@@ -106,34 +113,34 @@ public class NewDoctorDetails extends javax.swing.JPanel {
         jLabel6.setForeground(new java.awt.Color(0, 102, 102));
         jLabel6.setText("Email id :");
 
-        jTextField6.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jTextField6.setForeground(new java.awt.Color(0, 102, 102));
+        txtDoctorEmail.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtDoctorEmail.setForeground(new java.awt.Color(0, 102, 102));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 102, 102));
         jLabel7.setText("Community :");
 
-        jTextField7.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jTextField7.setForeground(new java.awt.Color(0, 102, 102));
+        txtDoctorCommunity.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtDoctorCommunity.setForeground(new java.awt.Color(0, 102, 102));
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 102, 102));
-        jButton1.setText("Sign Up");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        SignUpButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        SignUpButton.setForeground(new java.awt.Color(0, 102, 102));
+        SignUpButton.setText("Sign Up");
+        SignUpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                SignUpButtonActionPerformed(evt);
             }
         });
 
-        jTextField8.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jTextField8.setForeground(new java.awt.Color(0, 102, 102));
+        txtPassword.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtPassword.setForeground(new java.awt.Color(0, 102, 102));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 102, 102));
         jLabel8.setText("Paasword : ");
 
-        jTextField9.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jTextField9.setForeground(new java.awt.Color(0, 102, 102));
+        txtUserName.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtUserName.setForeground(new java.awt.Color(0, 102, 102));
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 102, 102));
@@ -155,32 +162,32 @@ public class NewDoctorDetails extends javax.swing.JPanel {
                         .addGap(7, 7, 7)
                         .addComponent(jLabel7)
                         .addGap(30, 30, 30)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtDoctorCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel6)
                             .addGap(30, 30, 30)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtDoctorEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel5)
                             .addGap(30, 30, 30)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtDoctorContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel4)
                             .addGap(30, 30, 30)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtDoctorCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel2)
                             .addGap(30, 30, 30)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtDoctorPincode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel3)
                             .addGap(30, 30, 30)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtDoctorAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel1)
                             .addGap(30, 30, 30)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtDoctorName, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -192,15 +199,15 @@ public class NewDoctorDetails extends javax.swing.JPanel {
                             .addComponent(jLabel8))
                         .addGap(40, 40, 40)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField8)
-                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPassword)
+                            .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(62, 62, 62)
-                                .addComponent(jButton1)))))
+                                .addComponent(SignUpButton)))))
                 .addGap(84, 84, 84))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jTextField1, jTextField2, jTextField3, jTextField4, jTextField5, jTextField6, jTextField7});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtDoctorAddress, txtDoctorCity, txtDoctorCommunity, txtDoctorContact, txtDoctorEmail, txtDoctorName, txtDoctorPincode});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -212,46 +219,46 @@ public class NewDoctorDetails extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
-                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
-                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(SignUpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(65, 65, 65)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtDoctorName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtDoctorAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtDoctorPincode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtDoctorCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtDoctorContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtDoctorEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtDoctorCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(269, Short.MAX_VALUE))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jTextField1, jTextField2, jTextField3, jTextField4, jTextField5, jTextField6, jTextField7});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtDoctorAddress, txtDoctorCity, txtDoctorCommunity, txtDoctorContact, txtDoctorEmail, txtDoctorName, txtDoctorPincode});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -275,24 +282,59 @@ public class NewDoctorDetails extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtDoctorNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDoctorNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtDoctorNameActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void txtDoctorCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDoctorCityActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_txtDoctorCityActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void txtDoctorContactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDoctorContactActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_txtDoctorContactActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void SignUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        
+        String doctorName = txtDoctorName.getText();
+        String doctorAddress = txtDoctorAddress.getText();
+        int doctorPincode = Integer.parseInt(txtDoctorPincode.getText());
+        String doctorCity = txtDoctorCity.getText();
+        long doctorContact = Long.parseLong(txtDoctorContact.getText());
+        String doctorEmail = txtDoctorEmail.getText();
+        String doctorCommunity = txtDoctorCommunity.getText();
+        String doctorUserName = txtUserName.getText();
+        String doctorPassword = txtPassword.getText();
+
+        Doctor newDoctor = doctorDirectory.addNewDoctor();
+        
+        newDoctor.setDoctorName(doctorName);
+        newDoctor.setDoctorAddress(doctorAddress);
+        newDoctor.setDoctorPincode(doctorPincode);
+        newDoctor.setDoctorCity(doctorCity);
+        newDoctor.setDoctorContact(doctorContact);
+        newDoctor.setDoctorEmail(doctorEmail);
+        newDoctor.setDoctorCommunity(doctorCommunity);
+        newDoctor.setUserName(doctorUserName);
+        newDoctor.setPassword(doctorPassword);
+   
+        JOptionPane.showMessageDialog(null, "Doctor Added!");
+        
+        txtDoctorName.setText("");
+        txtDoctorAddress.setText("");
+        txtDoctorPincode.setText("");
+        txtDoctorCity.setText("");
+        txtDoctorContact.setText("");
+        txtDoctorEmail.setText("");
+        txtDoctorCommunity.setText("");
+        txtUserName.setText("");
+        txtPassword.setText("");
+
+    }//GEN-LAST:event_SignUpButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton SignUpButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -304,14 +346,14 @@ public class NewDoctorDetails extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField txtDoctorAddress;
+    private javax.swing.JTextField txtDoctorCity;
+    private javax.swing.JTextField txtDoctorCommunity;
+    private javax.swing.JTextField txtDoctorContact;
+    private javax.swing.JTextField txtDoctorEmail;
+    private javax.swing.JTextField txtDoctorName;
+    private javax.swing.JTextField txtDoctorPincode;
+    private javax.swing.JTextField txtPassword;
+    private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
 }

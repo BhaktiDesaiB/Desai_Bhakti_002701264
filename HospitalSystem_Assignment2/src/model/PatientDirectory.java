@@ -15,15 +15,25 @@ import java.util.Set;
  */
 public class PatientDirectory 
 {
-   private ArrayList<Patient> patientHistory;
+   private ArrayList<Patient> patientDirectory;
 
-    public ArrayList<Patient> getPatientHistory() {
-        return patientHistory;
+   public PatientDirectory()
+    {
+        this.patientDirectory = new ArrayList<Patient>();
     }
 
-    public void setPatientHistory(ArrayList<Patient> patientHistory) {
-        this.patientHistory = patientHistory;
+    public ArrayList<Patient> getPatientDirectory() {
+        return patientDirectory;
     }
 
-   
+    public void setPatientDirectory(ArrayList<Patient> patientDirectory) {
+        this.patientDirectory = patientDirectory;
+    }
+  
+    public Patient addNewPatient()
+    {
+        Patient newPatient = new Patient();
+        patientDirectory.add(newPatient);
+        return newPatient;
+    }
 }

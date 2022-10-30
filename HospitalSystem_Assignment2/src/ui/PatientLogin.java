@@ -5,6 +5,7 @@
 package ui;
 
 import javax.swing.JOptionPane;
+import model.PatientDirectory;
 
 /**
  *
@@ -15,8 +16,12 @@ public class PatientLogin extends javax.swing.JPanel {
     /**
      * Creates new form PatientLogin
      */
+    
+    PatientDirectory patientDirectory;
+    
     public PatientLogin() {
         initComponents();
+        patientDirectory = new PatientDirectory();
     }
 
     /**
@@ -254,7 +259,7 @@ public class PatientLogin extends javax.swing.JPanel {
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
         // TODO add your handling code here:
-        NewPatientDetails patient = new NewPatientDetails();
+        NewPatientDetails patient = new NewPatientDetails(patientDirectory);
         //patient.setVisible(true);
         loginSplit.setRightComponent(patient);
     }//GEN-LAST:event_createButtonActionPerformed

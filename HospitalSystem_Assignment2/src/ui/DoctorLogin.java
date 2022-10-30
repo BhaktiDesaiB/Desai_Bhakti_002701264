@@ -5,18 +5,22 @@
 package ui;
 
 import javax.swing.JOptionPane;
+import model.DoctorDirectory;
 
 /**
  *
- * @author nisha
+ * @author bhakti
+ * 
  */
 public class DoctorLogin extends javax.swing.JPanel {
 
     /**
      * Creates new form DoctorLogin
      */
+    DoctorDirectory doctorDirectory;
     public DoctorLogin() {
         initComponents();
+        doctorDirectory = new DoctorDirectory();
     }
 
     /**
