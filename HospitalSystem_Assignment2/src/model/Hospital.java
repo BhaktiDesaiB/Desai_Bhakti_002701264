@@ -10,22 +10,17 @@ package model;
  */
 public class Hospital 
 {
-    private int hospitalId;
+    //private int hospitalId;
     private String hospitalName;
     private String hospitalAddress;
     private String hospitalCommunity;
-    private long hospitalEmergencyContact;
-    private short hospitalPincode;
+    private long hospitalContact;
+    private int hospitalPincode;
     private String hospitalCity; 
     private String hospitalEmail;
-
-    public int getHospitalId() {
-        return hospitalId;
-    }
-
-    public void setHospitalId(int hospitalId) {
-        this.hospitalId = hospitalId;
-    }
+    
+    private String hospitalUserName;
+    private String hospitalPassword;
 
     public String getHospitalName() {
         return hospitalName;
@@ -51,19 +46,19 @@ public class Hospital
         this.hospitalCommunity = hospitalCommunity;
     }
 
-    public long getHospitalEmergencyContact() {
-        return hospitalEmergencyContact;
+    public long getHospitalContact() {
+        return hospitalContact;
     }
 
-    public void setHospitalEmergencyContact(long hospitalEmergencyContact) {
-        this.hospitalEmergencyContact = hospitalEmergencyContact;
+    public void setHospitalContact(long hospitalContact) {
+        this.hospitalContact = hospitalContact;
     }
 
-    public short getHospitalPincode() {
+    public int getHospitalPincode() {
         return hospitalPincode;
     }
 
-    public void setHospitalPincode(short hospitalPincode) {
+    public void setHospitalPincode(int hospitalPincode) {
         this.hospitalPincode = hospitalPincode;
     }
 
@@ -82,6 +77,21 @@ public class Hospital
     public void setHospitalEmail(String hospitalEmail) {
         this.hospitalEmail = hospitalEmail;
     }
-    
+
+    public String getHospitalUserName() {
+        return hospitalUserName;
+    }
+
+    public void setHospitalUserName(String hospitalUserName) {
+        this.hospitalUserName = hospitalUserName;
+    }
+
+    public String getHospitalPassword() {
+        return hospitalPassword;
+    }
+
+    public void setHospitalPassword(String hospitalPassword) {
+        this.hospitalPassword = hospitalPassword;
+    }
     
 }

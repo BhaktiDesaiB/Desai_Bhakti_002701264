@@ -12,17 +12,26 @@ import java.util.ArrayList;
  */
 public class CommunityDirectory 
 {
-    private ArrayList<Community> communityHistory;
-
-    public ArrayList<Community> getCommunityHistory() 
-    {
-        return communityHistory;
-    }
-
-    public void setCommunityHistory(ArrayList<Community> communityHistory) 
-    {
-        this.communityHistory = communityHistory;
-    }
+    private ArrayList<Community> communityDirectory;
     
+    public CommunityDirectory()
+    {
+        this.communityDirectory = new ArrayList<Community>();
+    }
+
+    public ArrayList<Community> getCommunityDirectory() {
+        return communityDirectory;
+    }
+
+    public void setCommunityDirectory(ArrayList<Community> communityDirectory) {
+        this.communityDirectory = communityDirectory;
+    }
+
+    public Community addNewCommunity()
+    {
+        Community newCommunity = new Community();
+        communityDirectory.add(newCommunity);
+        return newCommunity;
+    }
     
 }

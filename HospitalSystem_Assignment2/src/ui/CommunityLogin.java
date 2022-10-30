@@ -5,18 +5,23 @@
 package ui;
 
 import javax.swing.JOptionPane;
+import model.CommunityDirectory;
 
 /**
  *
- * @author nisha
+ * @author bhakti
  */
 public class CommunityLogin extends javax.swing.JPanel {
 
     /**
      * Creates new form CommunityLogin
      */
+    
+    CommunityDirectory communityDirectory;
+    
     public CommunityLogin() {
         initComponents();
+        communityDirectory = new CommunityDirectory();
     }
 
     /**
@@ -258,7 +263,7 @@ public class CommunityLogin extends javax.swing.JPanel {
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
         // TODO add your handling code here:
-        NewCommunityDetails community = new NewCommunityDetails();
+        NewCommunityDetails community = new NewCommunityDetails(communityDirectory);
         //community.setVisible(true);
         loginSplit.setRightComponent(community);
     }//GEN-LAST:event_createButtonActionPerformed

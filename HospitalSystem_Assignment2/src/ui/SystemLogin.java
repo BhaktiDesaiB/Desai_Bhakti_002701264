@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author nisha
+ * @author bhakti
  */
 public class SystemLogin extends javax.swing.JPanel {
 
@@ -175,10 +175,9 @@ public class SystemLogin extends javax.swing.JPanel {
 
         if(username.equals("sys") || password.equals("sys"))
         {
-            System.out.println(username);
-            System.out.println(password);
-
             JOptionPane.showMessageDialog(null, "login successful");
+            SystemAdminFrame systemAdmin = new SystemAdminFrame();
+            systemAdmin.setVisible(true);
         }
         else
         {
@@ -206,4 +205,5 @@ public class SystemLogin extends javax.swing.JPanel {
     private javax.swing.JTextField txtUserName;
     private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
+
 }

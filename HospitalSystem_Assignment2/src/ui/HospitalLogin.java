@@ -5,18 +5,25 @@
 package ui;
 
 import javax.swing.JOptionPane;
+import model.HospitalDirectory;
 
 /**
  *
- * @author nisha
+ * @author bhakti
  */
+
+
+
 public class HospitalLogin extends javax.swing.JPanel {
 
     /**
      * Creates new form HospitalLogin
      */
+    
+    HospitalDirectory hospitalDirectory;
     public HospitalLogin() {
         initComponents();
+        hospitalDirectory = new HospitalDirectory();
     }
 
     /**
@@ -255,7 +262,7 @@ public class HospitalLogin extends javax.swing.JPanel {
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
         // TODO add your handling code here:
-        NewHospitalDetails hospital = new NewHospitalDetails();
+        NewHospitalDetails hospital = new NewHospitalDetails(hospitalDirectory);
         //hospital.setVisible(true);
         loginSplit.setRightComponent(hospital);
     }//GEN-LAST:event_createButtonActionPerformed

@@ -10,21 +10,16 @@ package model;
  */
 public class Community 
 {
-    private int communityId;
+    //private int communityId;
     private String communityName;
-    private String communityNearbyArea;
+    private String communityNearby;
     private String communityHospitalName;
-    private long communityEmergencyContact;
-    private short communityPincode;
+    private long communityContact;
+    private int communityPincode;
     private String communityCity; 
-
-    public int getCommunityId() {
-        return communityId;
-    }
-
-    public void setCommunityId(int communityId) {
-        this.communityId = communityId;
-    }
+    
+    private String communityUserName;
+    private String communityPassword;
 
     public String getCommunityName() {
         return communityName;
@@ -34,12 +29,12 @@ public class Community
         this.communityName = communityName;
     }
 
-    public String getCommunityNearbyArea() {
-        return communityNearbyArea;
+    public String getCommunityNearby() {
+        return communityNearby;
     }
 
-    public void setCommunityNearbyArea(String communityNearbyArea) {
-        this.communityNearbyArea = communityNearbyArea;
+    public void setCommunityNearby(String communityNearby) {
+        this.communityNearby = communityNearby;
     }
 
     public String getCommunityHospitalName() {
@@ -50,19 +45,19 @@ public class Community
         this.communityHospitalName = communityHospitalName;
     }
 
-    public long getCommunityEmergencyContact() {
-        return communityEmergencyContact;
+    public long getCommunityContact() {
+        return communityContact;
     }
 
-    public void setCommunityEmergencyContact(long communityEmergencyContact) {
-        this.communityEmergencyContact = communityEmergencyContact;
+    public void setCommunityContact(long communityContact) {
+        this.communityContact = communityContact;
     }
 
-    public short getCommunityPincode() {
+    public int getCommunityPincode() {
         return communityPincode;
     }
 
-    public void setCommunityPincode(short communityPincode) {
+    public void setCommunityPincode(int communityPincode) {
         this.communityPincode = communityPincode;
     }
 
@@ -73,5 +68,21 @@ public class Community
     public void setCommunityCity(String communityCity) {
         this.communityCity = communityCity;
     }
-    
+
+    public String getCommunityUserName() {
+        return communityUserName;
+    }
+
+    public void setCommunityUserName(String communityUserName) {
+        this.communityUserName = communityUserName;
+    }
+
+    public String getCommunityPassword() {
+        return communityPassword;
+    }
+
+    public void setCommunityPassword(String communityPassword) {
+        this.communityPassword = communityPassword;
+    }
+   
 }

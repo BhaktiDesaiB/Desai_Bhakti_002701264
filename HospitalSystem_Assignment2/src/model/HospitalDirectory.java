@@ -9,20 +9,33 @@ import java.util.ArrayList;
 /**
  *
  * @author bhakti
+ * 
  */
+    
 public class HospitalDirectory 
 {
-    private ArrayList<Hospital> hospitalHistory;
-
-    public ArrayList<Hospital> getHospitalHistory() 
+    private ArrayList<Hospital> hospitalDirectory;
+    
+    public HospitalDirectory()
     {
-        return hospitalHistory;
+        this.hospitalDirectory = new ArrayList<Hospital>();
     }
 
-    public void setHospitalHistory(ArrayList<Hospital> hospitalHistory) 
+    public ArrayList<Hospital> getHospitalDirectory()
     {
-        this.hospitalHistory = hospitalHistory;
+        return hospitalDirectory;
+    }
+
+    public void setHospitalDirectory(ArrayList<Hospital> hospitalDirectory) 
+    {
+        this.hospitalDirectory = hospitalDirectory;
     }
     
     
+       public Hospital addNewHospital()
+    {
+        Hospital newHospital = new Hospital();
+        hospitalDirectory.add(newHospital);
+        return newHospital;
+    }
 }

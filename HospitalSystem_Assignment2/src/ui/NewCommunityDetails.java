@@ -4,17 +4,24 @@
  */
 package ui;
 
+import javax.swing.JOptionPane;
+import model.Community;
+import model.CommunityDirectory;
+
 /**
  *
- * @author nisha
+ * @author bhakti
  */
 public class NewCommunityDetails extends javax.swing.JPanel {
 
     /**
      * Creates new form NewCommunityDetails
      */
-    public NewCommunityDetails() {
+    CommunityDirectory communityDirectory;
+    
+    public NewCommunityDetails(CommunityDirectory communityDirectory) {
         initComponents();
+        this.communityDirectory = communityDirectory;
     }
 
     /**
@@ -26,33 +33,33 @@ public class NewCommunityDetails extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
+        txtCommunityName = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        txtCommunityNearby = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtCommunityHospitalName = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        txtCommunityCity = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        txtCommunityContact = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        txtCommunityPincode = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
+        txtCommunityUserName = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        txtCommunityPassword = new javax.swing.JTextField();
+        SignUpButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 204, 255));
         setForeground(new java.awt.Color(0, 102, 102));
 
-        jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 102, 102));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtCommunityName.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtCommunityName.setForeground(new java.awt.Color(0, 102, 102));
+        txtCommunityName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtCommunityNameActionPerformed(evt);
             }
         });
 
@@ -64,25 +71,25 @@ public class NewCommunityDetails extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(0, 102, 102));
         jLabel3.setText("Community nearby Area : ");
 
-        jTextField3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(0, 102, 102));
+        txtCommunityNearby.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtCommunityNearby.setForeground(new java.awt.Color(0, 102, 102));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 102, 102));
         jLabel2.setText("Hospital Name associated with community:");
 
-        jTextField2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(0, 102, 102));
+        txtCommunityHospitalName.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtCommunityHospitalName.setForeground(new java.awt.Color(0, 102, 102));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 102, 102));
         jLabel4.setText("City community is located : ");
 
-        jTextField4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(0, 102, 102));
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        txtCommunityCity.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtCommunityCity.setForeground(new java.awt.Color(0, 102, 102));
+        txtCommunityCity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                txtCommunityCityActionPerformed(evt);
             }
         });
 
@@ -90,11 +97,11 @@ public class NewCommunityDetails extends javax.swing.JPanel {
         jLabel5.setForeground(new java.awt.Color(0, 102, 102));
         jLabel5.setText("Emergency Contact no. :");
 
-        jTextField5.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jTextField5.setForeground(new java.awt.Color(0, 102, 102));
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        txtCommunityContact.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtCommunityContact.setForeground(new java.awt.Color(0, 102, 102));
+        txtCommunityContact.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                txtCommunityContactActionPerformed(evt);
             }
         });
 
@@ -102,8 +109,8 @@ public class NewCommunityDetails extends javax.swing.JPanel {
         jLabel6.setForeground(new java.awt.Color(0, 102, 102));
         jLabel6.setText("City Pincode : ");
 
-        jTextField6.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jTextField6.setForeground(new java.awt.Color(0, 102, 102));
+        txtCommunityPincode.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtCommunityPincode.setForeground(new java.awt.Color(0, 102, 102));
 
         jLabel10.setBackground(new java.awt.Color(204, 204, 255));
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -114,22 +121,22 @@ public class NewCommunityDetails extends javax.swing.JPanel {
         jLabel9.setForeground(new java.awt.Color(0, 102, 102));
         jLabel9.setText("UserName : ");
 
-        jTextField9.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jTextField9.setForeground(new java.awt.Color(0, 102, 102));
+        txtCommunityUserName.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtCommunityUserName.setForeground(new java.awt.Color(0, 102, 102));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 102, 102));
         jLabel8.setText("Paasword : ");
 
-        jTextField8.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jTextField8.setForeground(new java.awt.Color(0, 102, 102));
+        txtCommunityPassword.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtCommunityPassword.setForeground(new java.awt.Color(0, 102, 102));
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 102, 102));
-        jButton1.setText("Sign Up");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        SignUpButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        SignUpButton.setForeground(new java.awt.Color(0, 102, 102));
+        SignUpButton.setText("Sign Up");
+        SignUpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                SignUpButtonActionPerformed(evt);
             }
         });
 
@@ -145,27 +152,27 @@ public class NewCommunityDetails extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addGap(30, 30, 30)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtCommunityCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(30, 30, 30)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtCommunityHospitalName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(30, 30, 30)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtCommunityNearby, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addGap(30, 30, 30)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtCommunityName, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addGap(30, 30, 30)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtCommunityContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addGap(30, 30, 30)
-                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(txtCommunityPincode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(89, 89, 89)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,15 +185,15 @@ public class NewCommunityDetails extends javax.swing.JPanel {
                                     .addComponent(jLabel8))
                                 .addGap(40, 40, 40)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField8)
-                                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(txtCommunityPassword)
+                                    .addComponent(txtCommunityUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(263, 263, 263)
-                        .addComponent(jButton1)))
+                        .addComponent(SignUpButton)))
                 .addContainerGap(352, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jTextField1, jTextField2, jTextField3, jTextField4, jTextField5, jTextField6});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtCommunityCity, txtCommunityContact, txtCommunityHospitalName, txtCommunityName, txtCommunityNearby, txtCommunityPincode});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,61 +201,92 @@ public class NewCommunityDetails extends javax.swing.JPanel {
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCommunityName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCommunityNearby, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCommunityHospitalName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCommunityCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCommunityContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCommunityPincode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43)
                 .addComponent(jLabel10)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCommunityUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCommunityPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SignUpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(140, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtCommunityNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCommunityNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtCommunityNameActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void txtCommunityCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCommunityCityActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_txtCommunityCityActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void txtCommunityContactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCommunityContactActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_txtCommunityContactActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void SignUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpButtonActionPerformed
+        // TODO add your handling code here:  
+        //private int communityId;
+        String communityName = txtCommunityName.getText();
+        String communityNearBy = txtCommunityNearby.getText();
+        String communityHospitalName = txtCommunityHospitalName.getText();
+        String communityCity = txtCommunityCity.getText();
+        long communityContact = Long.parseLong(txtCommunityContact.getText());
+        int communityPincode = Integer.parseInt(txtCommunityPincode.getText());
+        String communityUserName = txtCommunityUserName.getText();
+        String communityPassword = txtCommunityPassword.getText();
+
+        Community newCommunity = communityDirectory.addNewCommunity();
+        
+        newCommunity.setCommunityName(communityName);
+        newCommunity.setCommunityNearby(communityNearBy);
+        newCommunity.setCommunityHospitalName(communityHospitalName);
+        newCommunity.setCommunityCity(communityCity);
+        newCommunity.setCommunityContact(communityContact);
+        newCommunity.setCommunityPincode(communityPincode);
+        newCommunity.setCommunityUserName(communityUserName);
+        newCommunity.setCommunityPassword(communityPassword);
+        
+        JOptionPane.showMessageDialog(null, "Community Added!");
+        
+        txtCommunityName.setText("");
+        txtCommunityNearby.setText("");
+        txtCommunityHospitalName.setText("");
+        txtCommunityCity.setText("");
+        txtCommunityContact.setText("");
+        txtCommunityPincode.setText("");
+        txtCommunityUserName.setText("");
+        txtCommunityPassword.setText("");
+    }//GEN-LAST:event_SignUpButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton SignUpButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -258,13 +296,13 @@ public class NewCommunityDetails extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField txtCommunityCity;
+    private javax.swing.JTextField txtCommunityContact;
+    private javax.swing.JTextField txtCommunityHospitalName;
+    private javax.swing.JTextField txtCommunityName;
+    private javax.swing.JTextField txtCommunityNearby;
+    private javax.swing.JTextField txtCommunityPassword;
+    private javax.swing.JTextField txtCommunityPincode;
+    private javax.swing.JTextField txtCommunityUserName;
     // End of variables declaration//GEN-END:variables
 }
