@@ -46,15 +46,22 @@ public class AppointmentBooking extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         ComboBoxCommunity = new javax.swing.JComboBox<>();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 102));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Book an Appointment");
 
+        jLabel2.setForeground(new java.awt.Color(0, 102, 102));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel2.setText("Select Doctor:");
 
+        jLabel3.setForeground(new java.awt.Color(0, 102, 102));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel3.setText("Select City:");
 
+        jLabel4.setForeground(new java.awt.Color(0, 102, 102));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel4.setText("Select Hospital:");
 
@@ -74,6 +81,9 @@ public class AppointmentBooking extends javax.swing.JPanel {
 
         ComboBoxDoctor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        btnBookAppointment.setBackground(new java.awt.Color(204, 204, 255));
+        btnBookAppointment.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnBookAppointment.setForeground(new java.awt.Color(0, 102, 102));
         btnBookAppointment.setText("Book Appointment");
         btnBookAppointment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,6 +91,7 @@ public class AppointmentBooking extends javax.swing.JPanel {
             }
         });
 
+        jLabel5.setForeground(new java.awt.Color(0, 102, 102));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel5.setText("Select Community:");
 
@@ -125,6 +136,9 @@ public class AppointmentBooking extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {ComboBoxCity, ComboBoxCommunity, ComboBoxDoctor, ComboBoxHospital});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -142,14 +156,17 @@ public class AppointmentBooking extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ComboBoxHospital, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ComboBoxDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnBookAppointment)
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addComponent(btnBookAppointment, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(89, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {ComboBoxCity, ComboBoxCommunity, ComboBoxDoctor, ComboBoxHospital});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void ComboBoxCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxCityActionPerformed

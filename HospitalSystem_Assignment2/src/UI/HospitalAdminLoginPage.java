@@ -59,10 +59,16 @@ public class HospitalAdminLoginPage extends javax.swing.JPanel {
         txtPassword = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
 
+        HospitalAdminSplitPane.setBackground(new java.awt.Color(204, 204, 255));
         HospitalAdminSplitPane.setDividerLocation(250);
         HospitalAdminSplitPane.setDividerSize(0);
         HospitalAdminSplitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+
+        btnLogin.setBackground(new java.awt.Color(204, 204, 255));
+        btnLogin.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnLogin.setForeground(new java.awt.Color(0, 102, 102));
         btnLogin.setText("Login");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,8 +76,14 @@ public class HospitalAdminLoginPage extends javax.swing.JPanel {
             }
         });
 
+        lblUsername.setBackground(new java.awt.Color(204, 204, 255));
+        lblUsername.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        lblUsername.setForeground(new java.awt.Color(0, 102, 102));
         lblUsername.setText("Username:");
 
+        lblPassword.setBackground(new java.awt.Color(204, 204, 255));
+        lblPassword.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        lblPassword.setForeground(new java.awt.Color(0, 102, 102));
         lblPassword.setText("Password:");
 
         txtUsername.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -80,8 +92,14 @@ public class HospitalAdminLoginPage extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 102));
         jLabel1.setText("Hospital Admin Login");
 
+        btnAddDoctor.setBackground(new java.awt.Color(204, 204, 255));
+        btnAddDoctor.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnAddDoctor.setForeground(new java.awt.Color(0, 102, 102));
         btnAddDoctor.setText("Add Doctor");
         btnAddDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,6 +107,9 @@ public class HospitalAdminLoginPage extends javax.swing.JPanel {
             }
         });
 
+        btnCreatePatient.setBackground(new java.awt.Color(204, 204, 255));
+        btnCreatePatient.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnCreatePatient.setForeground(new java.awt.Color(0, 102, 102));
         btnCreatePatient.setText("Create Patient");
         btnCreatePatient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,6 +117,9 @@ public class HospitalAdminLoginPage extends javax.swing.JPanel {
             }
         });
 
+        btnViewVitals.setBackground(new java.awt.Color(204, 204, 255));
+        btnViewVitals.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnViewVitals.setForeground(new java.awt.Color(0, 102, 102));
         btnViewVitals.setText("View Vitals");
         btnViewVitals.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,26 +137,27 @@ public class HospitalAdminLoginPage extends javax.swing.JPanel {
                         .addGap(150, 150, 150)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(81, 81, 81)
-                                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(lblPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(lblUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(81, 81, 81)
+                                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addComponent(btnAddDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnCreatePatient)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnViewVitals, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(594, Short.MAX_VALUE))
+                        .addComponent(btnViewVitals, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(592, Short.MAX_VALUE))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtPassword, txtUsername});
@@ -141,8 +166,8 @@ public class HospitalAdminLoginPage extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -151,8 +176,8 @@ public class HospitalAdminLoginPage extends javax.swing.JPanel {
                     .addComponent(lblPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnLogin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAddDoctor)
                     .addComponent(btnCreatePatient)
@@ -161,6 +186,8 @@ public class HospitalAdminLoginPage extends javax.swing.JPanel {
         );
 
         HospitalAdminSplitPane.setTopComponent(jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

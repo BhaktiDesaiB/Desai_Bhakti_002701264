@@ -53,7 +53,6 @@ public class PatientInitialPage extends javax.swing.JPanel {
 
         PatientSplitPane = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
-        lblWelcome = new javax.swing.JLabel();
         lblWelcomemsg2 = new javax.swing.JLabel();
         btnCreatePatient = new javax.swing.JButton();
         lblAlreadyUser = new javax.swing.JLabel();
@@ -73,12 +72,14 @@ public class PatientInitialPage extends javax.swing.JPanel {
         PatientSplitPane.setDividerSize(0);
         PatientSplitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        lblWelcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblWelcome.setText("Hello, Welcome");
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
         lblWelcomemsg2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblWelcomemsg2.setText("First Time to the App");
+        lblWelcomemsg2.setText("New to the App");
 
+        btnCreatePatient.setBackground(new java.awt.Color(204, 204, 255));
+        btnCreatePatient.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        btnCreatePatient.setForeground(new java.awt.Color(0, 102, 102));
         btnCreatePatient.setText("Create Account");
         btnCreatePatient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,6 +90,9 @@ public class PatientInitialPage extends javax.swing.JPanel {
         lblAlreadyUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAlreadyUser.setText("Already an User? Please Login:");
 
+        btnLogin.setBackground(new java.awt.Color(204, 204, 255));
+        btnLogin.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        btnLogin.setForeground(new java.awt.Color(0, 102, 102));
         btnLogin.setText("Login");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,6 +118,9 @@ public class PatientInitialPage extends javax.swing.JPanel {
             }
         });
 
+        btnBookAppointment.setBackground(new java.awt.Color(204, 204, 255));
+        btnBookAppointment.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        btnBookAppointment.setForeground(new java.awt.Color(0, 102, 102));
         btnBookAppointment.setText("Book an Appointment");
         btnBookAppointment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,6 +128,9 @@ public class PatientInitialPage extends javax.swing.JPanel {
             }
         });
 
+        btnPersonalDetails.setBackground(new java.awt.Color(204, 204, 255));
+        btnPersonalDetails.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        btnPersonalDetails.setForeground(new java.awt.Color(0, 102, 102));
         btnPersonalDetails.setText("Personal Details");
         btnPersonalDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,6 +138,9 @@ public class PatientInitialPage extends javax.swing.JPanel {
             }
         });
 
+        btnEncounterHistory.setBackground(new java.awt.Color(204, 204, 255));
+        btnEncounterHistory.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        btnEncounterHistory.setForeground(new java.awt.Color(0, 102, 102));
         btnEncounterHistory.setText("Encounter History");
         btnEncounterHistory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,25 +152,36 @@ public class PatientInitialPage extends javax.swing.JPanel {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblWelcome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblAlreadyUser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblWelcomemsg2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(lblWelcomemsg2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnCreatePatient, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(311, 311, 311))
+                .addGap(219, 219, 219))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(lblAlreadyUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(251, 251, 251)
+                        .addGap(97, 97, 97)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(81, 81, 81)
-                                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(lblLogged)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtLoggedPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnBookAppointment)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnPersonalDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnEncounterHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(227, 227, 227)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(lblPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -165,20 +189,7 @@ public class PatientInitialPage extends javax.swing.JPanel {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(lblUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(97, 97, 97)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnBookAppointment)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnPersonalDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnEncounterHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lblLogged)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtLoggedPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(217, Short.MAX_VALUE))
         );
 
@@ -187,8 +198,7 @@ public class PatientInitialPage extends javax.swing.JPanel {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap()
                 .addComponent(lblWelcomemsg2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnCreatePatient)
@@ -202,9 +212,9 @@ public class PatientInitialPage extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnLogin)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnLogin)
+                .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLogged, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtLoggedPerson, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -217,6 +227,9 @@ public class PatientInitialPage extends javax.swing.JPanel {
         );
 
         PatientSplitPane.setTopComponent(jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel2.setForeground(new java.awt.Color(0, 102, 102));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -327,7 +340,6 @@ public class PatientInitialPage extends javax.swing.JPanel {
     private javax.swing.JLabel lblLogged;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblUsername;
-    private javax.swing.JLabel lblWelcome;
     private javax.swing.JLabel lblWelcomemsg2;
     public static javax.swing.JTextField txtLoggedPerson;
     private javax.swing.JPasswordField txtPassword;

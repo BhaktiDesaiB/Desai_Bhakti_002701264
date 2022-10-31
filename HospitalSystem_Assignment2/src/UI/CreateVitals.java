@@ -46,12 +46,27 @@ public class CreateVitals extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         txtUserName = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+        setForeground(new java.awt.Color(0, 102, 102));
+
+        lblBloodPressure.setBackground(new java.awt.Color(204, 204, 255));
+        lblBloodPressure.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        lblBloodPressure.setForeground(new java.awt.Color(0, 102, 102));
         lblBloodPressure.setText("Blood Pressure:");
 
+        lblPulse.setBackground(new java.awt.Color(204, 204, 255));
+        lblPulse.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        lblPulse.setForeground(new java.awt.Color(0, 102, 102));
         lblPulse.setText("Pulse:");
 
+        lblDate.setBackground(new java.awt.Color(204, 204, 255));
+        lblDate.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        lblDate.setForeground(new java.awt.Color(0, 102, 102));
         lblDate.setText("Date:");
 
+        btnSave.setBackground(new java.awt.Color(204, 204, 255));
+        btnSave.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnSave.setForeground(new java.awt.Color(0, 102, 102));
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,11 +92,20 @@ public class CreateVitals extends javax.swing.JPanel {
             }
         });
 
+        lblCreateSigns.setBackground(new java.awt.Color(204, 204, 255));
+        lblCreateSigns.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblCreateSigns.setForeground(new java.awt.Color(0, 102, 102));
         lblCreateSigns.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCreateSigns.setText("Cretate Vital Signs");
 
+        lblTemparature.setBackground(new java.awt.Color(204, 204, 255));
+        lblTemparature.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        lblTemparature.setForeground(new java.awt.Color(0, 102, 102));
         lblTemparature.setText("Temperature:");
 
+        jLabel1.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 102));
         jLabel1.setText("Patient_UserName:");
 
         txtUserName.addActionListener(new java.awt.event.ActionListener() {
@@ -99,10 +123,14 @@ public class CreateVitals extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(122, 122, 122)
+                .addComponent(lblCreateSigns, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
+                .addGap(189, 189, 189))
             .addGroup(layout.createSequentialGroup()
-                .addGap(110, 110, 110)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblBloodPressure)
                             .addComponent(lblTemparature)
@@ -120,13 +148,9 @@ public class CreateVitals extends javax.swing.JPanel {
                                 .addComponent(txtUserName)
                                 .addGap(3, 3, 3))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(btnSave)))
+                        .addGap(250, 250, 250)
+                        .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(122, 122, 122)
-                .addComponent(lblCreateSigns, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
-                .addGap(189, 189, 189))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,29 +161,26 @@ public class CreateVitals extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblTemparature)
                             .addComponent(txtTemperature, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lblBloodPressure)
-                                    .addComponent(txtBloodPressure, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(lblPulse))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtPulse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblBloodPressure)
+                            .addComponent(txtBloodPressure, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblPulse)
+                            .addComponent(txtPulse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(20, 20, 20)
                         .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lblDate))
                 .addGap(18, 18, 18)
-                .addComponent(btnSave)
-                .addContainerGap(282, Short.MAX_VALUE))
+                .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(256, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
